@@ -1,0 +1,38 @@
+Benchmark: dynamodb-write
+Temperature: hot
+
+=== java (ohne OTel) ===
+Runtime (ms):
+  count=10000 min=6.14 max=51.69 mean=9.25 median=8.66 p50=8.66 p90=11.36 p95=13.01 p99=19.24 stdev=2.40 iqr=1.75
+Max Memory Used (MB):
+  count=10000 min=161.00 max=164.00 mean=162.33 median=162.00 p50=162.00 p90=163.00 p95=163.00 p99=164.00 stdev=0.59 iqr=1.00
+
+=== java (mit OTel) ===
+Runtime (ms):
+  count=10000 min=7.01 max=55.22 mean=10.95 median=10.01 p50=10.01 p90=14.36 p95=17.20 p99=23.91 stdev=3.16 iqr=2.20
+Max Memory Used (MB):
+  count=10000 min=248.00 max=257.00 mean=250.11 median=250.00 p50=250.00 p90=252.00 p95=252.00 p99=253.00 stdev=1.03 iqr=0.00
+
+=== nodejs (ohne OTel) ===
+Runtime (ms):
+  count=10000 min=4.68 max=60.38 mean=8.24 median=7.59 p50=7.59 p90=10.22 p95=11.16 p99=18.85 stdev=3.11 iqr=1.96
+Max Memory Used (MB):
+  count=10000 min=101.00 max=112.00 mean=105.84 median=106.00 p50=106.00 p90=108.00 p95=108.00 p99=109.00 stdev=1.62 iqr=2.00
+
+=== nodejs (mit OTel) ===
+Runtime (ms):
+  count=10000 min=6.35 max=105.59 mean=11.08 median=9.37 p50=9.37 p90=13.98 p95=17.20 p99=49.49 stdev=7.19 iqr=3.47
+Max Memory Used (MB):
+  count=10000 min=167.00 max=185.00 mean=172.09 median=172.00 p50=172.00 p90=175.00 p95=176.00 p99=178.00 stdev=2.18 iqr=3.00
+
+=== python (ohne OTel) ===
+Runtime (ms):
+  count=10000 min=4.88 max=35.17 mean=7.64 median=7.42 p50=7.42 p90=8.65 p95=9.39 p99=13.59 stdev=1.50 iqr=1.01
+Max Memory Used (MB):
+  count=10000 min=89.00 max=89.00 mean=89.00 median=89.00 p50=89.00 p90=89.00 p95=89.00 p99=89.00 stdev=0.00 iqr=0.00
+
+=== python (mit OTel) ===
+Runtime (ms):
+  count=10000 min=6.73 max=48.07 mean=9.21 median=8.94 p50=8.94 p90=10.29 p95=11.11 p99=15.96 stdev=1.67 iqr=1.05
+Max Memory Used (MB):
+  count=10000 min=109.00 max=110.00 mean=109.99 median=110.00 p50=110.00 p90=110.00 p95=110.00 p99=110.00 stdev=0.10 iqr=0.00

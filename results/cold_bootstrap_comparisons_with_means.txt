@@ -1,0 +1,133 @@
+============================================================
+BOOTSTRAP-ANALYSE: RELATIVER OVERHEAD (COLD STARTS)
+Wiederholungen pro Test: 100.000
+============================================================
+
+
+>>> METRIK: DURATION (MS) <<<
+------------------------------------------------------------
+
+[EINZELWERTE ÜBERSICHT]
+JAVA    | dynamodb-read   | Ohne: 1297.49ms | Mit: 1843.58ms | Overhead:  42.09% (std=0.0017)
+JAVA    | dynamodb-write  | Ohne: 1304.32ms | Mit: 1854.74ms | Overhead:  42.20% (std=0.0017)
+JAVA    | get-request     | Ohne:  226.32ms | Mit:  728.45ms | Overhead: 221.87% (std=0.0055)
+JAVA    | invoke          | Ohne: 1180.40ms | Mit: 1730.56ms | Overhead:  46.61% (std=0.0016)
+JAVA    | post-request    | Ohne:  266.48ms | Mit:  753.02ms | Overhead: 182.58% (std=0.0043)
+NODEJS  | dynamodb-read   | Ohne:  105.09ms | Mit:  205.36ms | Overhead:  95.42% (std=0.0043)
+NODEJS  | dynamodb-write  | Ohne:  109.08ms | Mit:  207.14ms | Overhead:  89.90% (std=0.0039)
+NODEJS  | get-request     | Ohne:  174.93ms | Mit:  130.07ms | Overhead: -25.65% (std=0.0015)
+NODEJS  | invoke          | Ohne:  105.54ms | Mit:  206.33ms | Overhead:  95.50% (std=0.0058)
+NODEJS  | post-request    | Ohne:  180.58ms | Mit:  140.34ms | Overhead: -22.28% (std=0.0013)
+PYTHON  | dynamodb-read   | Ohne:   38.13ms | Mit:   45.60ms | Overhead:  19.58% (std=0.0056)
+PYTHON  | dynamodb-write  | Ohne:   42.01ms | Mit:   48.56ms | Overhead:  15.60% (std=0.0046)
+PYTHON  | get-request     | Ohne:    8.90ms | Mit:    8.00ms | Overhead: -10.19% (std=0.0139)
+PYTHON  | invoke          | Ohne:   37.74ms | Mit:   43.74ms | Overhead:  15.91% (std=0.0056)
+PYTHON  | post-request    | Ohne:    9.06ms | Mit:    7.87ms | Overhead: -13.12% (std=0.0080)
+
+[STATISTISCHE PAARVERGLEICHE]
+--- java vs. python ---
+  dynamodb-read  : java=0.4209 vs python=0.1958 (p=0.00000) -> SIGNIFIKANT HÖHER
+  dynamodb-write : java=0.4220 vs python=0.1560 (p=0.00000) -> SIGNIFIKANT HÖHER
+  get-request    : java=2.2187 vs python=-0.1019 (p=0.00000) -> SIGNIFIKANT HÖHER
+  invoke         : java=0.4661 vs python=0.1591 (p=0.00000) -> SIGNIFIKANT HÖHER
+  post-request   : java=1.8258 vs python=-0.1312 (p=0.00000) -> SIGNIFIKANT HÖHER
+
+--- java vs. nodejs ---
+  dynamodb-read  : java=0.4209 vs nodejs=0.9542 (p=1.00000) -> nicht signifikant
+  dynamodb-write : java=0.4220 vs nodejs=0.8990 (p=1.00000) -> nicht signifikant
+  get-request    : java=2.2187 vs nodejs=-0.2565 (p=0.00000) -> SIGNIFIKANT HÖHER
+  invoke         : java=0.4661 vs nodejs=0.9550 (p=1.00000) -> nicht signifikant
+  post-request   : java=1.8258 vs nodejs=-0.2228 (p=0.00000) -> SIGNIFIKANT HÖHER
+
+--- python vs. nodejs ---
+  dynamodb-read  : python=0.1958 vs nodejs=0.9542 (p=1.00000) -> nicht signifikant
+  dynamodb-write : python=0.1560 vs nodejs=0.8990 (p=1.00000) -> nicht signifikant
+  get-request    : python=-0.1019 vs nodejs=-0.2565 (p=0.00000) -> SIGNIFIKANT HÖHER
+  invoke         : python=0.1591 vs nodejs=0.9550 (p=1.00000) -> nicht signifikant
+  post-request   : python=-0.1312 vs nodejs=-0.2228 (p=0.00000) -> SIGNIFIKANT HÖHER
+
+
+>>> METRIK: INIT DURATION (MS) <<<
+------------------------------------------------------------
+
+[EINZELWERTE ÜBERSICHT]
+JAVA    | dynamodb-read   | Ohne: 1657.61ms | Mit: 4341.14ms | Overhead: 161.89% (std=0.0039)
+JAVA    | dynamodb-write  | Ohne: 1665.97ms | Mit: 4367.15ms | Overhead: 162.14% (std=0.0040)
+JAVA    | get-request     | Ohne:  841.77ms | Mit: 3325.21ms | Overhead: 295.02% (std=0.0074)
+JAVA    | invoke          | Ohne: 1622.55ms | Mit: 4261.37ms | Overhead: 162.63% (std=0.0040)
+JAVA    | post-request    | Ohne:  878.76ms | Mit: 3354.64ms | Overhead: 281.75% (std=0.0070)
+NODEJS  | dynamodb-read   | Ohne:  423.74ms | Mit: 1718.29ms | Overhead: 305.50% (std=0.0085)
+NODEJS  | dynamodb-write  | Ohne:  428.35ms | Mit: 1718.56ms | Overhead: 301.21% (std=0.0084)
+NODEJS  | get-request     | Ohne:  155.34ms | Mit: 1265.74ms | Overhead: 714.81% (std=0.0314)
+NODEJS  | invoke          | Ohne:  443.36ms | Mit: 1743.14ms | Overhead: 293.17% (std=0.0112)
+NODEJS  | post-request    | Ohne:  142.41ms | Mit: 1253.38ms | Overhead: 780.11% (std=0.0228)
+PYTHON  | dynamodb-read   | Ohne:  508.48ms | Mit: 1237.93ms | Overhead: 143.46% (std=0.0070)
+PYTHON  | dynamodb-write  | Ohne:  507.61ms | Mit: 1233.87ms | Overhead: 143.07% (std=0.0073)
+PYTHON  | get-request     | Ohne:  172.86ms | Mit: 1027.21ms | Overhead: 494.26% (std=0.0161)
+PYTHON  | invoke          | Ohne:  474.10ms | Mit: 1194.58ms | Overhead: 151.97% (std=0.0066)
+PYTHON  | post-request    | Ohne:  173.43ms | Mit: 1009.09ms | Overhead: 481.85% (std=0.0181)
+
+[STATISTISCHE PAARVERGLEICHE]
+--- java vs. python ---
+  dynamodb-read  : java=1.6189 vs python=1.4346 (p=0.00000) -> SIGNIFIKANT HÖHER
+  dynamodb-write : java=1.6214 vs python=1.4307 (p=0.00000) -> SIGNIFIKANT HÖHER
+  get-request    : java=2.9502 vs python=4.9426 (p=1.00000) -> nicht signifikant
+  invoke         : java=1.6263 vs python=1.5197 (p=0.00000) -> SIGNIFIKANT HÖHER
+  post-request   : java=2.8175 vs python=4.8185 (p=1.00000) -> nicht signifikant
+
+--- java vs. nodejs ---
+  dynamodb-read  : java=1.6189 vs nodejs=3.0550 (p=1.00000) -> nicht signifikant
+  dynamodb-write : java=1.6214 vs nodejs=3.0121 (p=1.00000) -> nicht signifikant
+  get-request    : java=2.9502 vs nodejs=7.1481 (p=1.00000) -> nicht signifikant
+  invoke         : java=1.6263 vs nodejs=2.9317 (p=1.00000) -> nicht signifikant
+  post-request   : java=2.8175 vs nodejs=7.8011 (p=1.00000) -> nicht signifikant
+
+--- python vs. nodejs ---
+  dynamodb-read  : python=1.4346 vs nodejs=3.0550 (p=1.00000) -> nicht signifikant
+  dynamodb-write : python=1.4307 vs nodejs=3.0121 (p=1.00000) -> nicht signifikant
+  get-request    : python=4.9426 vs nodejs=7.1481 (p=1.00000) -> nicht signifikant
+  invoke         : python=1.5197 vs nodejs=2.9317 (p=1.00000) -> nicht signifikant
+  post-request   : python=4.8185 vs nodejs=7.8011 (p=1.00000) -> nicht signifikant
+
+
+>>> METRIK: MAX MEMORY USED (MB) <<<
+------------------------------------------------------------
+
+[EINZELWERTE ÜBERSICHT]
+JAVA    | dynamodb-read   | Ohne:  161.54MB | Mit:  249.06MB | Overhead:  54.18% (std=0.0001)
+JAVA    | dynamodb-write  | Ohne:  161.71MB | Mit:  249.07MB | Overhead:  54.02% (std=0.0001)
+JAVA    | get-request     | Ohne:  128.64MB | Mit:  218.11MB | Overhead:  69.55% (std=0.0002)
+JAVA    | invoke          | Ohne:  161.72MB | Mit:  249.55MB | Overhead:  54.31% (std=0.0001)
+JAVA    | post-request    | Ohne:  130.98MB | Mit:  219.80MB | Overhead:  67.82% (std=0.0001)
+NODEJS  | dynamodb-read   | Ohne:  103.22MB | Mit:  171.83MB | Overhead:  66.47% (std=0.0006)
+NODEJS  | dynamodb-write  | Ohne:  103.22MB | Mit:  172.61MB | Overhead:  67.22% (std=0.0006)
+NODEJS  | get-request     | Ohne:   83.03MB | Mit:  157.33MB | Overhead:  89.49% (std=0.0003)
+NODEJS  | invoke          | Ohne:  104.45MB | Mit:  171.74MB | Overhead:  64.43% (std=0.0007)
+NODEJS  | post-request    | Ohne:   83.73MB | Mit:  157.71MB | Overhead:  88.36% (std=0.0004)
+PYTHON  | dynamodb-read   | Ohne:   89.00MB | Mit:  109.73MB | Overhead:  23.29% (std=0.0001)
+PYTHON  | dynamodb-write  | Ohne:   89.00MB | Mit:  109.70MB | Overhead:  23.26% (std=0.0001)
+PYTHON  | get-request     | Ohne:   49.00MB | Mit:   86.00MB | Overhead:  75.51% (std=0.0000)
+PYTHON  | invoke          | Ohne:   87.00MB | Mit:  108.00MB | Overhead:  24.14% (std=0.0000)
+PYTHON  | post-request    | Ohne:   49.00MB | Mit:   85.98MB | Overhead:  75.47% (std=0.0001)
+
+[STATISTISCHE PAARVERGLEICHE]
+--- java vs. python ---
+  dynamodb-read  : java=0.5418 vs python=0.2329 (p=0.00000) -> SIGNIFIKANT HÖHER
+  dynamodb-write : java=0.5402 vs python=0.2326 (p=0.00000) -> SIGNIFIKANT HÖHER
+  get-request    : java=0.6955 vs python=0.7551 (p=1.00000) -> nicht signifikant
+  invoke         : java=0.5431 vs python=0.2414 (p=0.00000) -> SIGNIFIKANT HÖHER
+  post-request   : java=0.6782 vs python=0.7547 (p=1.00000) -> nicht signifikant
+
+--- java vs. nodejs ---
+  dynamodb-read  : java=0.5418 vs nodejs=0.6647 (p=1.00000) -> nicht signifikant
+  dynamodb-write : java=0.5402 vs nodejs=0.6722 (p=1.00000) -> nicht signifikant
+  get-request    : java=0.6955 vs nodejs=0.8949 (p=1.00000) -> nicht signifikant
+  invoke         : java=0.5431 vs nodejs=0.6443 (p=1.00000) -> nicht signifikant
+  post-request   : java=0.6782 vs nodejs=0.8836 (p=1.00000) -> nicht signifikant
+
+--- python vs. nodejs ---
+  dynamodb-read  : python=0.2329 vs nodejs=0.6647 (p=1.00000) -> nicht signifikant
+  dynamodb-write : python=0.2326 vs nodejs=0.6722 (p=1.00000) -> nicht signifikant
+  get-request    : python=0.7551 vs nodejs=0.8949 (p=1.00000) -> nicht signifikant
+  invoke         : python=0.2414 vs nodejs=0.6443 (p=1.00000) -> nicht signifikant
+  post-request   : python=0.7547 vs nodejs=0.8836 (p=1.00000) -> nicht signifikant

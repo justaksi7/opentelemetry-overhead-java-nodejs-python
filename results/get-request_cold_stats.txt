@@ -1,0 +1,50 @@
+Benchmark: get-request
+Temperature: cold
+
+=== java (ohne OTel) ===
+Runtime (ms):
+  count=2000 min=170.47 max=290.68 mean=226.32 median=227.12 p50=227.12 p90=243.98 p95=248.18 p99=261.24 stdev=14.18 iqr=17.15
+Max Memory Used (MB):
+  count=2000 min=128.00 max=131.00 mean=128.64 median=129.00 p50=129.00 p90=129.00 p95=129.00 p99=129.00 stdev=0.50 iqr=1.00
+Initialization Duration (ms):
+  count=2000 min=649.51 max=1390.73 mean=841.77 median=838.33 p50=838.33 p90=901.09 p95=929.08 p99=998.84 stdev=54.92 iqr=50.61
+
+=== java (mit OTel) ===
+Runtime (ms):
+  count=2000 min=595.36 max=947.92 mean=728.45 median=728.44 p50=728.44 p90=766.51 p95=778.75 p99=805.83 stdev=32.18 iqr=36.99
+Max Memory Used (MB):
+  count=2000 min=217.00 max=222.00 mean=218.11 median=218.00 p50=218.00 p90=219.00 p95=219.00 p99=220.00 stdev=0.58 iqr=0.00
+Initialization Duration (ms):
+  count=2000 min=2587.85 max=4201.10 mean=3325.21 median=3334.48 p50=3334.48 p90=3504.56 p95=3561.84 p99=3753.10 stdev=173.20 iqr=155.08
+
+=== nodejs (ohne OTel) ===
+Runtime (ms):
+  count=2000 min=141.06 max=272.90 mean=174.93 median=173.59 p50=173.59 p90=187.72 p95=195.80 p99=216.76 stdev=11.69 iqr=11.80
+Max Memory Used (MB):
+  count=2000 min=83.00 max=84.00 mean=83.03 median=83.00 p50=83.00 p90=83.00 p95=83.00 p99=84.00 stdev=0.17 iqr=0.00
+Initialization Duration (ms):
+  count=2000 min=111.66 max=401.92 mean=155.34 median=148.45 p50=148.45 p90=188.86 p95=205.86 p99=244.11 stdev=25.53 iqr=25.30
+
+=== nodejs (mit OTel) ===
+Runtime (ms):
+  count=2000 min=101.95 max=219.07 mean=130.07 median=130.50 p50=130.50 p90=136.93 p95=142.36 p99=154.82 stdev=8.08 iqr=8.47
+Max Memory Used (MB):
+  count=2000 min=154.00 max=160.00 mean=157.33 median=157.00 p50=157.00 p90=158.00 p95=159.00 p99=159.00 stdev=1.03 iqr=1.00
+Initialization Duration (ms):
+  count=2000 min=998.88 max=1649.12 mean=1265.74 median=1268.26 p50=1268.26 p90=1331.41 p95=1354.81 p99=1430.76 stdev=63.28 iqr=60.22
+
+=== python (ohne OTel) ===
+Runtime (ms):
+  count=2000 min=6.06 max=36.44 mean=8.90 median=8.41 p50=8.41 p90=10.01 p95=12.35 p99=20.91 stdev=2.47 iqr=1.17
+Max Memory Used (MB):
+  count=2000 min=49.00 max=49.00 mean=49.00 median=49.00 p50=49.00 p90=49.00 p95=49.00 p99=49.00 stdev=0.00 iqr=0.00
+Initialization Duration (ms):
+  count=2000 min=128.74 max=342.63 mean=172.86 median=169.76 p50=169.76 p90=193.32 p95=205.14 p99=237.59 stdev=17.96 iqr=17.30
+
+=== python (mit OTel) ===
+Runtime (ms):
+  count=2000 min=5.50 max=213.11 mean=8.00 median=7.49 p50=7.49 p90=8.61 p95=9.62 p99=20.56 stdev=5.08 iqr=0.94
+Max Memory Used (MB):
+  count=2000 min=86.00 max=86.00 mean=86.00 median=86.00 p50=86.00 p90=86.00 p95=86.00 p99=86.00 stdev=0.00 iqr=0.00
+Initialization Duration (ms):
+  count=2000 min=793.79 max=1575.56 mean=1027.21 median=1022.64 p50=1022.64 p90=1093.93 p95=1127.25 p99=1221.46 stdev=64.14 iqr=57.49

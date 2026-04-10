@@ -1,0 +1,76 @@
+=== BOOTSTRAP MEAN ANALYSE (HOT STARTS) ===
+
+
+>>> Duration (ms) <<<
+--------------------------------------------------
+
+[OVERHEAD ÜBERSICHT]
+JAVA    | dynamodb-read   | Ohne:    7.41 | Mit:    9.42 | OH:  27.15%
+JAVA    | dynamodb-write  | Ohne:    9.25 | Mit:   10.95 | OH:  18.41%
+JAVA    | get-request     | Ohne:    5.36 | Mit:    7.12 | OH:  32.93%
+JAVA    | invoke          | Ohne:   16.08 | Mit:   17.81 | OH:  10.76%
+JAVA    | post-request    | Ohne:    5.41 | Mit:    7.27 | OH:  34.27%
+NODEJS  | dynamodb-read   | Ohne:    6.17 | Mit:    9.50 | OH:  53.82%
+NODEJS  | dynamodb-write  | Ohne:    8.24 | Mit:   11.08 | OH:  34.58%
+NODEJS  | get-request     | Ohne:    6.36 | Mit:    9.28 | OH:  45.85%
+NODEJS  | invoke          | Ohne:   15.41 | Mit:   19.16 | OH:  24.35%
+NODEJS  | post-request    | Ohne:    6.32 | Mit:   10.34 | OH:  63.74%
+PYTHON  | dynamodb-read   | Ohne:    5.69 | Mit:    7.47 | OH:  31.36%
+PYTHON  | dynamodb-write  | Ohne:    7.64 | Mit:    9.21 | OH:  20.49%
+PYTHON  | get-request     | Ohne:    3.66 | Mit:    5.25 | OH:  43.43%
+PYTHON  | invoke          | Ohne:   28.89 | Mit:   32.66 | OH:  13.03%
+PYTHON  | post-request    | Ohne:    3.79 | Mit:    5.30 | OH:  39.80%
+
+[PAARVERGLEICHE]
+dynamodb-read   java vs python: p=1.00000 -> nicht sig.
+dynamodb-write  java vs python: p=0.99984 -> nicht sig.
+get-request     java vs python: p=1.00000 -> nicht sig.
+invoke          java vs python: p=0.99936 -> nicht sig.
+post-request    java vs python: p=1.00000 -> nicht sig.
+dynamodb-read   java vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-write  java vs nodejs: p=1.00000 -> nicht sig.
+get-request     java vs nodejs: p=1.00000 -> nicht sig.
+invoke          java vs nodejs: p=1.00000 -> nicht sig.
+post-request    java vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-read   python vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-write  python vs nodejs: p=1.00000 -> nicht sig.
+get-request     python vs nodejs: p=0.86991 -> nicht sig.
+invoke          python vs nodejs: p=1.00000 -> nicht sig.
+post-request    python vs nodejs: p=1.00000 -> nicht sig.
+
+>>> Max Memory (MB) <<<
+--------------------------------------------------
+
+[OVERHEAD ÜBERSICHT]
+JAVA    | dynamodb-read   | Ohne:  162.24 | Mit:  250.23 | OH:  54.23%
+JAVA    | dynamodb-write  | Ohne:  162.33 | Mit:  250.11 | OH:  54.07%
+JAVA    | get-request     | Ohne:  129.16 | Mit:  218.62 | OH:  69.26%
+JAVA    | invoke          | Ohne:  162.19 | Mit:  250.18 | OH:  54.25%
+JAVA    | post-request    | Ohne:  131.30 | Mit:  220.38 | OH:  67.84%
+NODEJS  | dynamodb-read   | Ohne:  105.86 | Mit:  171.67 | OH:  62.17%
+NODEJS  | dynamodb-write  | Ohne:  105.84 | Mit:  172.09 | OH:  62.60%
+NODEJS  | get-request     | Ohne:   95.39 | Mit:  164.65 | OH:  72.60%
+NODEJS  | invoke          | Ohne:  106.73 | Mit:  171.91 | OH:  61.07%
+NODEJS  | post-request    | Ohne:   96.58 | Mit:  164.59 | OH:  70.43%
+PYTHON  | dynamodb-read   | Ohne:   89.00 | Mit:  109.99 | OH:  23.59%
+PYTHON  | dynamodb-write  | Ohne:   89.00 | Mit:  109.99 | OH:  23.58%
+PYTHON  | get-request     | Ohne:   49.00 | Mit:   86.00 | OH:  75.51%
+PYTHON  | invoke          | Ohne:   87.04 | Mit:  108.93 | OH:  25.15%
+PYTHON  | post-request    | Ohne:   49.00 | Mit:   86.00 | OH:  75.51%
+
+[PAARVERGLEICHE]
+dynamodb-read   java vs python: p=0.00000 -> SIGNIFIKANT
+dynamodb-write  java vs python: p=0.00000 -> SIGNIFIKANT
+get-request     java vs python: p=1.00000 -> nicht sig.
+invoke          java vs python: p=0.00000 -> SIGNIFIKANT
+post-request    java vs python: p=1.00000 -> nicht sig.
+dynamodb-read   java vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-write  java vs nodejs: p=1.00000 -> nicht sig.
+get-request     java vs nodejs: p=1.00000 -> nicht sig.
+invoke          java vs nodejs: p=1.00000 -> nicht sig.
+post-request    java vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-read   python vs nodejs: p=1.00000 -> nicht sig.
+dynamodb-write  python vs nodejs: p=1.00000 -> nicht sig.
+get-request     python vs nodejs: p=0.00000 -> SIGNIFIKANT
+invoke          python vs nodejs: p=1.00000 -> nicht sig.
+post-request    python vs nodejs: p=0.00000 -> SIGNIFIKANT
