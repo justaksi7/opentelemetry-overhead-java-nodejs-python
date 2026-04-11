@@ -1,0 +1,292 @@
+Signifikanzanalyse Cold-Starts (Welch t-Test)
+Vergleich: mit OTel vs. ohne OTel
+
+Gefundene *-cold.csv Dateien: 30
+Erkannte Sprach/Benchmark-Gruppen: 15
+
+=== java / dynamodb-read ===
+  ohne OTel Datei: java-dynamodb-read-cold.csv
+  mit OTel Datei:  java-dynamodb-read-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=1297.49 median=1296.15 std=50.26
+    mit OTel:  n=2000 mean=1843.58 median=1840.74 std=69.12 
+    overhead mean=42.09% overhead median=42.02%
+    t-Test: t=285.695614, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=1657.61 median=1644.62 std=89.87
+    mit OTel:  n=2000 mean=4341.14 median=4331.64 std=166.78 
+    overhead mean=161.89% overhead median=163.38%
+    t-Test: t=633.302058, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=161.54 median=162.00 std=0.50
+    mit OTel:  n=2000 mean=249.06 median=249.00 std=0.65 
+    overhead mean=54.18% overhead median=53.70%
+    t-Test: t=4769.239367, p=0 -> signifikant (alpha=0.00067)
+
+=== java / dynamodb-write ===
+  ohne OTel Datei: java-dynamodb-write-cold.csv
+  mit OTel Datei:  java-dynamodb-write-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=1304.32 median=1302.57 std=50.63
+    mit OTel:  n=2000 mean=1854.74 median=1849.57 std=67.87 
+    overhead mean=42.20% overhead median=41.99%
+    t-Test: t=290.640113, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=1665.97 median=1654.55 std=90.58
+    mit OTel:  n=2000 mean=4367.15 median=4350.58 std=179.33 
+    overhead mean=162.14% overhead median=162.95%
+    t-Test: t=601.129735, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=161.71 median=162.00 std=0.46
+    mit OTel:  n=2000 mean=249.07 median=249.00 std=0.61 
+    overhead mean=54.02% overhead median=53.70%
+    t-Test: t=5108.772359, p=0 -> signifikant (alpha=0.00067)
+
+=== java / get-request ===
+  ohne OTel Datei: java-get-request-cold.csv
+  mit OTel Datei:  java-get-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=226.32 median=227.12 std=14.18
+    mit OTel:  n=2000 mean=728.45 median=728.44 std=32.18 
+    overhead mean=221.87% overhead median=220.74%
+    t-Test: t=638.461741, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=841.77 median=838.33 std=54.92
+    mit OTel:  n=2000 mean=3325.21 median=3334.48 std=173.20 
+    overhead mean=295.03% overhead median=297.75%
+    t-Test: t=611.080199, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=128.64 median=129.00 std=0.50
+    mit OTel:  n=2000 mean=218.11 median=218.00 std=0.58 
+    overhead mean=69.55% overhead median=68.99%
+    t-Test: t=5255.879464, p=0 -> signifikant (alpha=0.00067)
+
+=== java / invoke ===
+  ohne OTel Datei: java-invoke-cold.csv
+  mit OTel Datei:  java-invoke-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=1180.40 median=1177.85 std=44.20
+    mit OTel:  n=2000 mean=1730.56 median=1728.22 std=57.83 
+    overhead mean=46.61% overhead median=46.73%
+    t-Test: t=337.955831, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=1622.55 median=1623.17 std=84.28
+    mit OTel:  n=2000 mean=4261.37 median=4281.86 std=192.22 
+    overhead mean=162.63% overhead median=163.80%
+    t-Test: t=562.127913, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=161.72 median=162.00 std=0.45
+    mit OTel:  n=2000 mean=249.55 median=250.00 std=0.66 
+    overhead mean=54.31% overhead median=54.32%
+    t-Test: t=4906.766649, p=0 -> signifikant (alpha=0.00067)
+
+=== java / post-request ===
+  ohne OTel Datei: java-post-request-cold.csv
+  mit OTel Datei:  java-post-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=266.48 median=267.25 std=14.42
+    mit OTel:  n=2000 mean=753.02 median=751.27 std=32.18 
+    overhead mean=182.58% overhead median=181.12%
+    t-Test: t=616.944016, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=878.76 median=877.13 std=53.93
+    mit OTel:  n=2000 mean=3354.64 median=3372.64 std=183.90 
+    overhead mean=281.75% overhead median=284.51%
+    t-Test: t=577.615898, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=130.98 median=131.00 std=0.20
+    mit OTel:  n=2000 mean=219.80 median=220.00 std=0.56 
+    overhead mean=67.82% overhead median=67.94%
+    t-Test: t=6656.557328, p=0 -> signifikant (alpha=0.00067)
+
+=== nodejs / dynamodb-read ===
+  ohne OTel Datei: nodejs-dynamodb-read-cold.csv
+  mit OTel Datei:  nodejs-dynamodb-read-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=105.09 median=104.98 std=7.33
+    mit OTel:  n=2000 mean=205.36 median=206.35 std=14.50 
+    overhead mean=95.42% overhead median=96.55%
+    t-Test: t=275.923407, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=423.74 median=419.62 std=32.88
+    mit OTel:  n=2000 mean=1718.29 median=1722.46 std=91.06 
+    overhead mean=305.50% overhead median=310.48%
+    t-Test: t=597.801902, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=103.22 median=103.00 std=0.77
+    mit OTel:  n=2000 mean=171.83 median=171.00 std=2.47 
+    overhead mean=66.47% overhead median=66.02%
+    t-Test: t=1184.405860, p=0 -> signifikant (alpha=0.00067)
+
+=== nodejs / dynamodb-write ===
+  ohne OTel Datei: nodejs-dynamodb-write-cold.csv
+  mit OTel Datei:  nodejs-dynamodb-write-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=109.08 median=108.74 std=6.98
+    mit OTel:  n=2000 mean=207.14 median=208.50 std=13.91 
+    overhead mean=89.90% overhead median=91.75%
+    t-Test: t=281.733425, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=428.35 median=423.20 std=35.10
+    mit OTel:  n=2000 mean=1718.56 median=1722.29 std=79.77 
+    overhead mean=301.20% overhead median=306.97%
+    t-Test: t=661.864431, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=103.22 median=103.00 std=0.71
+    mit OTel:  n=2000 mean=172.61 median=172.00 std=2.42 
+    overhead mean=67.22% overhead median=66.99%
+    t-Test: t=1229.507901, p=0 -> signifikant (alpha=0.00067)
+
+=== nodejs / get-request ===
+  ohne OTel Datei: nodejs-get-request-cold.csv
+  mit OTel Datei:  nodejs-get-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=174.93 median=173.59 std=11.69
+    mit OTel:  n=2000 mean=130.07 median=130.50 std=8.08 
+    overhead mean=-25.65% overhead median=-24.82%
+    t-Test: t=-141.140346, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=155.34 median=148.45 std=25.53
+    mit OTel:  n=2000 mean=1265.74 median=1268.26 std=63.28 
+    overhead mean=714.80% overhead median=754.31%
+    t-Test: t=727.562258, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=83.03 median=83.00 std=0.17
+    mit OTel:  n=2000 mean=157.33 median=157.00 std=1.03 
+    overhead mean=89.49% overhead median=89.16%
+    t-Test: t=3192.855619, p=0 -> signifikant (alpha=0.00067)
+
+=== nodejs / invoke ===
+  ohne OTel Datei: nodejs-invoke-cold.csv
+  mit OTel Datei:  nodejs-invoke-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=105.54 median=104.20 std=11.17
+    mit OTel:  n=2000 mean=206.33 median=206.22 std=16.76 
+    overhead mean=95.50% overhead median=97.91%
+    t-Test: t=223.715583, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=443.36 median=436.50 std=48.60
+    mit OTel:  n=2000 mean=1743.14 median=1739.77 std=112.30 
+    overhead mean=293.16% overhead median=298.58%
+    t-Test: t=474.915669, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=104.45 median=104.00 std=1.17
+    mit OTel:  n=2000 mean=171.74 median=171.00 std=2.67 
+    overhead mean=64.43% overhead median=64.42%
+    t-Test: t=1032.557047, p=0 -> signifikant (alpha=0.00067)
+
+=== nodejs / post-request ===
+  ohne OTel Datei: nodejs-post-request-cold.csv
+  mit OTel Datei:  nodejs-post-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=180.58 median=179.65 std=9.48
+    mit OTel:  n=2000 mean=140.34 median=139.31 std=7.53 
+    overhead mean=-22.28% overhead median=-22.45%
+    t-Test: t=-148.571222, p=0 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=142.41 median=139.51 std=14.58
+    mit OTel:  n=2000 mean=1253.38 median=1262.88 std=67.79 
+    overhead mean=780.09% overhead median=805.23%
+    t-Test: t=716.385098, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=83.73 median=84.00 std=0.44
+    mit OTel:  n=2000 mean=157.71 median=158.00 std=1.03 
+    overhead mean=88.36% overhead median=88.10%
+    t-Test: t=2959.251088, p=0 -> signifikant (alpha=0.00067)
+
+=== python / dynamodb-read ===
+  ohne OTel Datei: python-dynamodb-read-cold.csv
+  mit OTel Datei:  python-dynamodb-read-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=38.13 median=37.80 std=6.03
+    mit OTel:  n=2000 mean=45.60 median=45.51 std=6.31 
+    overhead mean=19.58% overhead median=20.41%
+    t-Test: t=38.266790, p=3.38929e-273 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=508.48 median=499.42 std=49.62
+    mit OTel:  n=2000 mean=1237.93 median=1221.04 std=102.89 
+    overhead mean=143.46% overhead median=144.49%
+    t-Test: t=285.521070, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=89.00 median=89.00 std=0.06
+    mit OTel:  n=2000 mean=109.73 median=110.00 std=0.45 
+    overhead mean=23.29% overhead median=23.60%
+    t-Test: t=2059.977113, p=0 -> signifikant (alpha=0.00067)
+
+=== python / dynamodb-write ===
+  ohne OTel Datei: python-dynamodb-write-cold.csv
+  mit OTel Datei:  python-dynamodb-write-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=42.01 median=41.65 std=5.67
+    mit OTel:  n=2000 mean=48.56 median=48.78 std=5.72 
+    overhead mean=15.60% overhead median=17.12%
+    t-Test: t=36.377721, p=1.49092e-250 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=507.61 median=499.06 std=55.16
+    mit OTel:  n=2000 mean=1233.87 median=1221.20 std=97.17 
+    overhead mean=143.07% overhead median=144.70%
+    t-Test: t=290.616653, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=89.00 median=89.00 std=0.04
+    mit OTel:  n=2000 mean=109.70 median=110.00 std=0.46 
+    overhead mean=23.26% overhead median=23.60%
+    t-Test: t=2019.684779, p=0 -> signifikant (alpha=0.00067)
+
+=== python / get-request ===
+  ohne OTel Datei: python-get-request-cold.csv
+  mit OTel Datei:  python-get-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=8.90 median=8.41 std=2.47
+    mit OTel:  n=2000 mean=8.00 median=7.49 std=5.08 
+    overhead mean=-10.20% overhead median=-10.94%
+    t-Test: t=-7.181938, p=8.70025e-13 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=172.86 median=169.76 std=17.96
+    mit OTel:  n=2000 mean=1027.21 median=1022.64 std=64.14 
+    overhead mean=494.26% overhead median=502.40%
+    t-Test: t=573.479181, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=49.00 median=49.00 std=0.00
+    mit OTel:  n=2000 mean=86.00 median=86.00 std=0.00 
+    overhead mean=75.51% overhead median=75.51%
+    t-Test: t=inf, p=0 -> signifikant (alpha=0.00067)
+
+=== python / invoke ===
+  ohne OTel Datei: python-invoke-cold.csv
+  mit OTel Datei:  python-invoke-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=37.74 median=36.67 std=6.53
+    mit OTel:  n=2000 mean=43.74 median=43.59 std=5.61 
+    overhead mean=15.91% overhead median=18.86%
+    t-Test: t=31.174669, p=9.74697e-191 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=474.10 median=469.01 std=45.76
+    mit OTel:  n=2000 mean=1194.58 median=1189.14 std=79.11 
+    overhead mean=151.97% overhead median=153.54%
+    t-Test: t=352.472051, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=87.00 median=87.00 std=0.00
+    mit OTel:  n=2000 mean=108.00 median=108.00 std=0.00 
+    overhead mean=24.14% overhead median=24.14%
+    t-Test: t=inf, p=0 -> signifikant (alpha=0.00067)
+
+=== python / post-request ===
+  ohne OTel Datei: python-post-request-cold.csv
+  mit OTel Datei:  python-post-request-otel-cold.csv
+  - Duration (ms)
+    ohne OTel: n=2000 mean=9.06 median=8.44 std=2.74
+    mit OTel:  n=2000 mean=7.87 median=7.49 std=2.17 
+    overhead mean=-13.12% overhead median=-11.26%
+    t-Test: t=-15.227453, p=7.18855e-51 -> signifikant (alpha=0.00067)
+  - Init Duration (ms)
+    ohne OTel: n=2000 mean=173.43 median=169.06 std=21.13
+    mit OTel:  n=2000 mean=1009.09 median=1007.19 std=68.67 
+    overhead mean=481.86% overhead median=495.78%
+    t-Test: t=520.019166, p=0 -> signifikant (alpha=0.00067)
+  - Max Memory Used (MB)
+    ohne OTel: n=2000 mean=49.00 median=49.00 std=0.00
+    mit OTel:  n=2000 mean=85.98 median=86.00 std=0.14 
+    overhead mean=75.47% overhead median=75.51%
+    t-Test: t=12110.825416, p=0 -> signifikant (alpha=0.00067)
+
+Ausgewertete vollständige Paare: 15

@@ -1,0 +1,121 @@
+============================================================
+DURCHSCHNITTSWERTE: BOOTSTRAP-STATISTIKEN
+============================================================
+
+Es werden nur diese 4 Dateien ausgewertet:
+  * cold_bootstrap_comparisons_with_means.txt
+  * hot_bootstrap_comparisons_with_means.txt
+  * cold_bootstrap_comparisons_with_medians.txt
+  * hot_bootstrap_comparisons_with_medians.txt
+
+[Mean Basis] Durchschnittlicher Overhead
+Cold Starts:
+  JAVA    | Overhead avg: 126.58% (n=15)
+  NODEJS  | Overhead avg: 200.24% (n=15)
+  PYTHON  | Overhead avg: 110.94% (n=15)
+Hot Starts:
+  JAVA    | Overhead avg: 42.32% (n=10)
+  NODEJS  | Overhead avg: 55.12% (n=10)
+  PYTHON  | Overhead avg: 37.15% (n=10)
+Combined:
+  JAVA    | Overhead avg: 92.87% (n=25)
+  NODEJS  | Overhead avg: 142.19% (n=25)
+  PYTHON  | Overhead avg: 81.42% (n=25)
+
+[Median Basis] Durchschnittlicher Overhead
+Cold Starts:
+  JAVA    | Overhead avg: 126.91% (n=15)
+  NODEJS  | Overhead avg: 205.93% (n=15)
+  PYTHON  | Overhead avg: 113.17% (n=15)
+Hot Starts:
+  JAVA    | Overhead avg: 41.00% (n=10)
+  NODEJS  | Overhead avg: 44.59% (n=10)
+  PYTHON  | Overhead avg: 37.56% (n=10)
+Combined:
+  JAVA    | Overhead avg: 92.55% (n=25)
+  NODEJS  | Overhead avg: 141.39% (n=25)
+  PYTHON  | Overhead avg: 82.93% (n=25)
+
+[Mean Basis] Duration
+Cold Starts:
+  JAVA    | Ohne OTel: 855.00 ms (n= 5) | Mit OTel: 1382.07 ms (n= 5) | Overhead: 107.07%
+  NODEJS  | Ohne OTel: 135.04 ms (n= 5) | Mit OTel: 177.85 ms (n= 5) | Overhead: 46.58%
+  PYTHON  | Ohne OTel: 27.17 ms (n= 5) | Mit OTel: 30.75 ms (n= 5) | Overhead: 5.56%
+Hot Starts:
+  JAVA    | Ohne OTel: 8.70 ms (n= 5) | Mit OTel: 10.51 ms (n= 5) | Overhead: 24.70%
+  NODEJS  | Ohne OTel: 8.50 ms (n= 5) | Mit OTel: 11.87 ms (n= 5) | Overhead: 44.47%
+  PYTHON  | Ohne OTel: 9.93 ms (n= 5) | Mit OTel: 11.98 ms (n= 5) | Overhead: 29.62%
+Combined:
+  JAVA    | Ohne OTel: 431.85 ms (n=10) | Mit OTel: 696.29 ms (n=10) | Overhead: 65.89%
+  NODEJS  | Ohne OTel: 71.77 ms (n=10) | Mit OTel: 94.86 ms (n=10) | Overhead: 45.52%
+  PYTHON  | Ohne OTel: 18.55 ms (n=10) | Mit OTel: 21.37 ms (n=10) | Overhead: 17.59%
+
+[Mean Basis] Init Duration
+Cold Starts:
+  JAVA    | Ohne OTel: 1333.33 ms (n= 5) | Mit OTel: 3929.90 ms (n= 5) | Overhead: 212.69%
+  NODEJS  | Ohne OTel: 318.64 ms (n= 5) | Mit OTel: 1539.82 ms (n= 5) | Overhead: 478.96%
+  PYTHON  | Ohne OTel: 367.30 ms (n= 5) | Mit OTel: 1140.54 ms (n= 5) | Overhead: 282.92%
+Hot Starts:
+  JAVA    | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+  NODEJS  | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+  PYTHON  | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+Combined:
+  JAVA    | Ohne OTel: 1333.33 ms (n= 5) | Mit OTel: 3929.90 ms (n= 5) | Overhead: 212.69%
+  NODEJS  | Ohne OTel: 318.64 ms (n= 5) | Mit OTel: 1539.82 ms (n= 5) | Overhead: 478.96%
+  PYTHON  | Ohne OTel: 367.30 ms (n= 5) | Mit OTel: 1140.54 ms (n= 5) | Overhead: 282.92%
+
+[Mean Basis] Max Memory Used
+Cold Starts:
+  JAVA    | Ohne OTel: 148.92 MB (n= 5) | Mit OTel: 237.12 MB (n= 5) | Overhead: 59.98%
+  NODEJS  | Ohne OTel: 95.53 MB (n= 5) | Mit OTel: 166.24 MB (n= 5) | Overhead: 75.19%
+  PYTHON  | Ohne OTel: 72.60 MB (n= 5) | Mit OTel: 99.88 MB (n= 5) | Overhead: 44.33%
+Hot Starts:
+  JAVA    | Ohne OTel: 149.44 MB (n= 5) | Mit OTel: 237.90 MB (n= 5) | Overhead: 59.93%
+  NODEJS  | Ohne OTel: 102.08 MB (n= 5) | Mit OTel: 168.98 MB (n= 5) | Overhead: 65.77%
+  PYTHON  | Ohne OTel: 72.61 MB (n= 5) | Mit OTel: 100.18 MB (n= 5) | Overhead: 44.67%
+Combined:
+  JAVA    | Ohne OTel: 149.18 MB (n=10) | Mit OTel: 237.51 MB (n=10) | Overhead: 59.95%
+  NODEJS  | Ohne OTel: 98.81 MB (n=10) | Mit OTel: 167.61 MB (n=10) | Overhead: 70.48%
+  PYTHON  | Ohne OTel: 72.60 MB (n=10) | Mit OTel: 100.03 MB (n=10) | Overhead: 44.50%
+
+[Median Basis] Duration
+Cold Starts:
+  JAVA    | Ohne OTel: 854.19 ms (n= 5) | Mit OTel: 1379.65 ms (n= 5) | Overhead: 106.52%
+  NODEJS  | Ohne OTel: 134.23 ms (n= 5) | Mit OTel: 178.18 ms (n= 5) | Overhead: 47.78%
+  PYTHON  | Ohne OTel: 26.59 ms (n= 5) | Mit OTel: 30.57 ms (n= 5) | Overhead: 6.84%
+Hot Starts:
+  JAVA    | Ohne OTel: 8.03 ms (n= 5) | Mit OTel: 9.54 ms (n= 5) | Overhead: 21.86%
+  NODEJS  | Ohne OTel: 7.48 ms (n= 5) | Mit OTel: 9.24 ms (n= 5) | Overhead: 24.93%
+  PYTHON  | Ohne OTel: 9.45 ms (n= 5) | Mit OTel: 11.47 ms (n= 5) | Overhead: 30.42%
+Combined:
+  JAVA    | Ohne OTel: 431.11 ms (n=10) | Mit OTel: 694.59 ms (n=10) | Overhead: 64.19%
+  NODEJS  | Ohne OTel: 70.85 ms (n=10) | Mit OTel: 93.71 ms (n=10) | Overhead: 36.36%
+  PYTHON  | Ohne OTel: 18.02 ms (n=10) | Mit OTel: 21.02 ms (n=10) | Overhead: 18.63%
+
+[Median Basis] Init Duration
+Cold Starts:
+  JAVA    | Ohne OTel: 1327.56 ms (n= 5) | Mit OTel: 3934.24 ms (n= 5) | Overhead: 214.48%
+  NODEJS  | Ohne OTel: 313.46 ms (n= 5) | Mit OTel: 1543.13 ms (n= 5) | Overhead: 495.06%
+  PYTHON  | Ohne OTel: 361.26 ms (n= 5) | Mit OTel: 1132.24 ms (n= 5) | Overhead: 288.21%
+Hot Starts:
+  JAVA    | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+  NODEJS  | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+  PYTHON  | Ohne OTel: n/a ms (n= 0) | Mit OTel: n/a ms (n= 0) | Overhead: n/a%
+Combined:
+  JAVA    | Ohne OTel: 1327.56 ms (n= 5) | Mit OTel: 3934.24 ms (n= 5) | Overhead: 214.48%
+  NODEJS  | Ohne OTel: 313.46 ms (n= 5) | Mit OTel: 1543.13 ms (n= 5) | Overhead: 495.06%
+  PYTHON  | Ohne OTel: 361.26 ms (n= 5) | Mit OTel: 1132.24 ms (n= 5) | Overhead: 288.21%
+
+[Median Basis] Max Memory Used
+Cold Starts:
+  JAVA    | Ohne OTel: 149.20 MB (n= 5) | Mit OTel: 237.20 MB (n= 5) | Overhead: 59.73%
+  NODEJS  | Ohne OTel: 95.40 MB (n= 5) | Mit OTel: 165.80 MB (n= 5) | Overhead: 74.94%
+  PYTHON  | Ohne OTel: 72.60 MB (n= 5) | Mit OTel: 100.00 MB (n= 5) | Overhead: 44.47%
+Hot Starts:
+  JAVA    | Ohne OTel: 149.20 MB (n= 5) | Mit OTel: 237.80 MB (n= 5) | Overhead: 60.13%
+  NODEJS  | Ohne OTel: 102.60 MB (n= 5) | Mit OTel: 168.60 MB (n= 5) | Overhead: 64.25%
+  PYTHON  | Ohne OTel: 72.60 MB (n= 5) | Mit OTel: 100.20 MB (n= 5) | Overhead: 44.70%
+Combined:
+  JAVA    | Ohne OTel: 149.20 MB (n=10) | Mit OTel: 237.50 MB (n=10) | Overhead: 59.93%
+  NODEJS  | Ohne OTel: 99.00 MB (n=10) | Mit OTel: 167.20 MB (n=10) | Overhead: 69.60%
+  PYTHON  | Ohne OTel: 72.60 MB (n=10) | Mit OTel: 100.10 MB (n=10) | Overhead: 44.59%
