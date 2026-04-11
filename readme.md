@@ -21,7 +21,7 @@ For each language (Java, Node.js, Python), 12.000 instrumented and 12.000 non-in
 
 In total, five microbenchmarks are used to evaluate tracing overhead under typical serverless interaction patterns.
 
-<img src="gfx/Microbenchmarks.png">
+<img src="gfx/Microbenchmarks.png" width=400>
 
 All benchmarks are executed in two variants:
 
