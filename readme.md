@@ -14,12 +14,12 @@ Serverless-Umgebungen". The goal of this work is a comparative performance evalu
 
 ## Project Overview
 
-The project evaluates the overhead introduced by OpenTelemetry instrumentation in serverless workloads.
+The project evaluates the overhead introduced by OpenTelemetry instrumentation in AWS-based serverless workloads.
 
 For each language (Java, Node.js, Python), 12.000 instrumented and 12.000 non-instrumented function invocations (2.000 cold starts and 10.000 hot starts) were observed and the results were evaluated. The differences in performance between the instrumented and non-instrumented versions were tested for statistical significance in all 3 languages across all 3 metrics (Duration, Init Duration and Max Memory Used) using Welch's t-tests. All of the performance differences were statistically significant. Additionally to the differences between the instrumented and non-instrumented versions of the functions, the performance differences across all 3 languages were tested for statistical significance using bootstrap tests based on the means and medians as well. All of the differences were statistically significant based on the medians. In the case of means the only statistical insignificance occured between Python and NodeJS for the microbenchmark HTTP GET request (for hot starts only).
 ## Microbenchmarks
 
-In total, five microbenchmarks are used to evaluate tracing overhead under typical serverless interaction patterns.
+In total, five microbenchmarks are used to evaluate tracing overhead under typical AWS serverless interaction patterns.
 
 <img src="gfx/Microbenchmarks.png" width=400>
 
@@ -36,14 +36,14 @@ For each benchmark, the following metrics are compared:
 
 <details><summary><b>Function Invocation</b></summary>
 
-This microbenchmark measures the overhead of one serverless function invoking another function.
+This microbenchmark measures the overhead of one AWS Lambda function invoking another Lambda function asynchronously (fire-and-forget).
 
 Typical flow:
 
 1. Function A receives a lightweight input payload.
-2. Function A invokes Function B.
-3. Function B performs a minimal computation and returns a small response.
-4. Function A returns the downstream result.
+2. Function A invokes Function B asynchronously.
+3. Function A does not wait for Function B to complete.
+4. Function A returns immediately after the invocation call is sent.
 
 What this captures:
 
@@ -55,7 +55,7 @@ What this captures:
 
 <details><summary><b>HTTP GET Request</b></summary>
 
-This microbenchmark evaluates read-only outbound HTTP communication from a function to an external endpoint.
+This microbenchmark evaluates read-only outbound HTTP communication from a Lambda function to an endpoint in the AWS-based test setup.
 
 Typical flow:
 
@@ -73,7 +73,7 @@ What this captures:
 
 <details><summary><b>HTTP POST Request</b></summary>
 
-This microbenchmark evaluates outbound HTTP communication with a request body.
+This microbenchmark evaluates outbound HTTP communication with a request body from a Lambda function to an endpoint in the AWS-based test setup.
 
 Typical flow:
 
@@ -89,9 +89,9 @@ What this captures:
 
 </details>
 
-<details><summary><b>Key-Value Store Read Operation</b></summary>
+<details><summary><b>AWS DynamoDB Read Operation</b></summary>
 
-This microbenchmark measures the overhead of reading a single record from a managed key-value datastore.
+This microbenchmark measures the overhead of reading a single record from AWS DynamoDB.
 
 Typical flow:
 
@@ -107,9 +107,9 @@ What this captures:
 
 </details>
 
-<details><summary><b>Key-Value Store Write Operation</b></summary>
+<details><summary><b>AWS DynamoDB Write Operation</b></summary>
 
-This microbenchmark measures the overhead of writing a single record to a managed key-value datastore.
+This microbenchmark measures the overhead of writing a single record to AWS DynamoDB.
 
 Typical flow:
 
@@ -125,7 +125,7 @@ What this captures:
 
 </details>
 
-Together, these five microbenchmarks cover function-to-function calls, outbound HTTP traffic, and datastore access patterns. This provides a compact but representative basis for comparing tracing overhead across runtimes and startup modes.
+Together, these five microbenchmarks cover Lambda-to-Lambda calls, outbound HTTP traffic, and DynamoDB access patterns within AWS. This provides a compact but representative basis for comparing tracing overhead across runtimes and startup modes.
 
 ## Repository Structure
 
