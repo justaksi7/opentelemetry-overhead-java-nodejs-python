@@ -1,0 +1,131 @@
+=== BOOTSTRAP MEDIAN ANALYSE (COLD STARTS) ===
+Konfidenzniveau: 99.9333% | Alpha-Adj: 0.000667
+H1: Einzelsprachlicher Overhead (Signifikant, wenn CI die 0 ausschließt)
+H2: Sprachvergleich (Signifikant, wenn p-Wert < Alpha-Adj)
+============================================================
+
+
+>>> DURATION (MS) <<<
+--------------------------------------------------------------------------------
+[OVERHEAD ÜBERSICHT (MEDIAN) & KONFIDENZINTERVALLE]
+JAVA    | dynamodb-read   | Med-Ohne:1296.15 | Med-Mit:1840.74 | OH:  41.99% CI [ 41.34%,  42.61%] -> SIGNIFIKANT
+JAVA    | dynamodb-write  | Med-Ohne:1302.57 | Med-Mit:1849.57 | OH:  42.01% CI [ 41.38%,  42.62%] -> SIGNIFIKANT
+JAVA    | get-request     | Med-Ohne: 227.12 | Med-Mit: 728.44 | OH: 220.70% CI [219.10%, 222.35%] -> SIGNIFIKANT
+JAVA    | invoke          | Med-Ohne:1177.85 | Med-Mit:1728.22 | OH:  46.73% CI [ 46.18%,  47.33%] -> SIGNIFIKANT
+JAVA    | post-request    | Med-Ohne: 267.25 | Med-Mit: 751.27 | OH: 181.18% CI [179.62%, 183.02%] -> SIGNIFIKANT
+NODEJS  | dynamodb-read   | Med-Ohne: 104.98 | Med-Mit: 206.35 | OH:  96.56% CI [ 94.61%,  98.23%] -> SIGNIFIKANT
+NODEJS  | dynamodb-write  | Med-Ohne: 108.74 | Med-Mit: 208.50 | OH:  91.67% CI [ 90.08%,  93.20%] -> SIGNIFIKANT
+NODEJS  | get-request     | Med-Ohne: 173.59 | Med-Mit: 130.50 | OH: -24.84% CI [-25.29%, -24.35%] -> SIGNIFIKANT
+NODEJS  | invoke          | Med-Ohne: 104.20 | Med-Mit: 206.22 | OH:  97.98% CI [ 96.82%,  99.27%] -> SIGNIFIKANT
+NODEJS  | post-request    | Med-Ohne: 179.65 | Med-Mit: 139.31 | OH: -22.48% CI [-22.96%, -21.99%] -> SIGNIFIKANT
+PYTHON  | dynamodb-read   | Med-Ohne:  37.80 | Med-Mit:  45.51 | OH:  20.42% CI [ 18.07%,  22.64%] -> SIGNIFIKANT
+PYTHON  | dynamodb-write  | Med-Ohne:  41.65 | Med-Mit:  48.78 | OH:  17.06% CI [ 14.83%,  19.00%] -> SIGNIFIKANT
+PYTHON  | get-request     | Med-Ohne:   8.41 | Med-Mit:   7.49 | OH: -10.96% CI [-12.15%,  -9.78%] -> SIGNIFIKANT
+PYTHON  | invoke          | Med-Ohne:  36.67 | Med-Mit:  43.59 | OH:  18.88% CI [ 16.97%,  20.90%] -> SIGNIFIKANT
+PYTHON  | post-request    | Med-Ohne:   8.44 | Med-Mit:   7.49 | OH: -11.23% CI [-12.50%, -10.07%] -> SIGNIFIKANT
+
+[PAARVERGLEICHE DER MEDIAN-OVERHEADS (H2)]
+--- java vs. python ---
+  dynamodb-read  : 41.99% vs 20.42% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 42.01% vs 17.06% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 220.70% vs -10.96% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 46.73% vs 18.88% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 181.18% vs -11.23% (p=0.00000) -> SIGNIFIKANT
+
+--- java vs. nodejs ---
+  dynamodb-read  : 41.99% vs 96.56% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 42.01% vs 91.67% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 220.70% vs -24.84% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 46.73% vs 97.98% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 181.18% vs -22.48% (p=0.00000) -> SIGNIFIKANT
+
+--- python vs. nodejs ---
+  dynamodb-read  : 20.42% vs 96.56% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 17.06% vs 91.67% (p=0.00000) -> SIGNIFIKANT
+  get-request    : -10.96% vs -24.84% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 18.88% vs 97.98% (p=0.00000) -> SIGNIFIKANT
+  post-request   : -11.23% vs -22.48% (p=0.00000) -> SIGNIFIKANT
+
+
+>>> INIT DURATION (MS) <<<
+--------------------------------------------------------------------------------
+[OVERHEAD ÜBERSICHT (MEDIAN) & KONFIDENZINTERVALLE]
+JAVA    | dynamodb-read   | Med-Ohne:1644.62 | Med-Mit:4331.64 | OH: 163.38% CI [162.12%, 164.64%] -> SIGNIFIKANT
+JAVA    | dynamodb-write  | Med-Ohne:1654.55 | Med-Mit:4350.58 | OH: 162.90% CI [161.68%, 164.14%] -> SIGNIFIKANT
+JAVA    | get-request     | Med-Ohne: 838.33 | Med-Mit:3334.48 | OH: 297.77% CI [295.73%, 299.97%] -> SIGNIFIKANT
+JAVA    | invoke          | Med-Ohne:1623.17 | Med-Mit:4281.86 | OH: 163.82% CI [162.67%, 164.92%] -> SIGNIFIKANT
+JAVA    | post-request    | Med-Ohne: 877.13 | Med-Mit:3372.64 | OH: 284.51% CI [282.69%, 286.05%] -> SIGNIFIKANT
+NODEJS  | dynamodb-read   | Med-Ohne: 419.62 | Med-Mit:1722.46 | OH: 310.46% CI [308.03%, 312.78%] -> SIGNIFIKANT
+NODEJS  | dynamodb-write  | Med-Ohne: 423.20 | Med-Mit:1722.29 | OH: 306.86% CI [304.38%, 309.18%] -> SIGNIFIKANT
+NODEJS  | get-request     | Med-Ohne: 148.45 | Med-Mit:1268.26 | OH: 754.13% CI [744.20%, 765.46%] -> SIGNIFIKANT
+NODEJS  | invoke          | Med-Ohne: 436.50 | Med-Mit:1739.77 | OH: 298.48% CI [295.18%, 301.23%] -> SIGNIFIKANT
+NODEJS  | post-request    | Med-Ohne: 139.51 | Med-Mit:1262.88 | OH: 805.21% CI [798.92%, 812.44%] -> SIGNIFIKANT
+PYTHON  | dynamodb-read   | Med-Ohne: 499.42 | Med-Mit:1221.04 | OH: 144.54% CI [142.63%, 146.63%] -> SIGNIFIKANT
+PYTHON  | dynamodb-write  | Med-Ohne: 499.06 | Med-Mit:1221.20 | OH: 144.73% CI [142.85%, 146.93%] -> SIGNIFIKANT
+PYTHON  | get-request     | Med-Ohne: 169.76 | Med-Mit:1022.64 | OH: 502.34% CI [497.71%, 507.06%] -> SIGNIFIKANT
+PYTHON  | invoke          | Med-Ohne: 469.01 | Med-Mit:1189.14 | OH: 153.56% CI [151.95%, 155.55%] -> SIGNIFIKANT
+PYTHON  | post-request    | Med-Ohne: 169.06 | Med-Mit:1007.19 | OH: 495.87% CI [490.38%, 501.25%] -> SIGNIFIKANT
+
+[PAARVERGLEICHE DER MEDIAN-OVERHEADS (H2)]
+--- java vs. python ---
+  dynamodb-read  : 163.38% vs 144.54% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 162.90% vs 144.73% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 297.77% vs 502.34% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 163.82% vs 153.56% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 284.51% vs 495.87% (p=0.00000) -> SIGNIFIKANT
+
+--- java vs. nodejs ---
+  dynamodb-read  : 163.38% vs 310.46% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 162.90% vs 306.86% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 297.77% vs 754.13% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 163.82% vs 298.48% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 284.51% vs 805.21% (p=0.00000) -> SIGNIFIKANT
+
+--- python vs. nodejs ---
+  dynamodb-read  : 144.54% vs 310.46% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 144.73% vs 306.86% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 502.34% vs 754.13% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 153.56% vs 298.48% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 495.87% vs 805.21% (p=0.00000) -> SIGNIFIKANT
+
+
+>>> MAX MEMORY (MB) <<<
+--------------------------------------------------------------------------------
+[OVERHEAD ÜBERSICHT (MEDIAN) & KONFIDENZINTERVALLE]
+JAVA    | dynamodb-read   | Med-Ohne: 162.00 | Med-Mit: 249.00 | OH:  53.70% CI [ 53.70%,  53.70%] -> SIGNIFIKANT
+JAVA    | dynamodb-write  | Med-Ohne: 162.00 | Med-Mit: 249.00 | OH:  53.70% CI [ 53.70%,  53.70%] -> SIGNIFIKANT
+JAVA    | get-request     | Med-Ohne: 129.00 | Med-Mit: 218.00 | OH:  68.99% CI [ 68.99%,  68.99%] -> SIGNIFIKANT
+JAVA    | invoke          | Med-Ohne: 162.00 | Med-Mit: 250.00 | OH:  54.32% CI [ 53.70%,  54.32%] -> SIGNIFIKANT
+JAVA    | post-request    | Med-Ohne: 131.00 | Med-Mit: 220.00 | OH:  67.94% CI [ 67.94%,  67.94%] -> SIGNIFIKANT
+NODEJS  | dynamodb-read   | Med-Ohne: 103.00 | Med-Mit: 171.00 | OH:  66.02% CI [ 66.02%,  66.02%] -> SIGNIFIKANT
+NODEJS  | dynamodb-write  | Med-Ohne: 103.00 | Med-Mit: 172.00 | OH:  66.99% CI [ 66.99%,  66.99%] -> SIGNIFIKANT
+NODEJS  | get-request     | Med-Ohne:  83.00 | Med-Mit: 157.00 | OH:  89.16% CI [ 89.16%,  90.36%] -> SIGNIFIKANT
+NODEJS  | invoke          | Med-Ohne: 104.00 | Med-Mit: 171.00 | OH:  64.42% CI [ 64.42%,  64.42%] -> SIGNIFIKANT
+NODEJS  | post-request    | Med-Ohne:  84.00 | Med-Mit: 158.00 | OH:  88.10% CI [ 88.10%,  88.10%] -> SIGNIFIKANT
+PYTHON  | dynamodb-read   | Med-Ohne:  89.00 | Med-Mit: 110.00 | OH:  23.60% CI [ 23.60%,  23.60%] -> SIGNIFIKANT
+PYTHON  | dynamodb-write  | Med-Ohne:  89.00 | Med-Mit: 110.00 | OH:  23.60% CI [ 23.60%,  23.60%] -> SIGNIFIKANT
+PYTHON  | get-request     | Med-Ohne:  49.00 | Med-Mit:  86.00 | OH:  75.51% CI [ 75.51%,  75.51%] -> SIGNIFIKANT
+PYTHON  | invoke          | Med-Ohne:  87.00 | Med-Mit: 108.00 | OH:  24.14% CI [ 24.14%,  24.14%] -> SIGNIFIKANT
+PYTHON  | post-request    | Med-Ohne:  49.00 | Med-Mit:  86.00 | OH:  75.51% CI [ 75.51%,  75.51%] -> SIGNIFIKANT
+
+[PAARVERGLEICHE DER MEDIAN-OVERHEADS (H2)]
+--- java vs. python ---
+  dynamodb-read  : 53.70% vs 23.60% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 53.70% vs 23.60% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 68.99% vs 75.51% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 54.32% vs 24.14% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 67.94% vs 75.51% (p=0.00000) -> SIGNIFIKANT
+
+--- java vs. nodejs ---
+  dynamodb-read  : 53.70% vs 66.02% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 53.70% vs 66.99% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 68.99% vs 89.16% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 54.32% vs 64.42% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 67.94% vs 88.10% (p=0.00000) -> SIGNIFIKANT
+
+--- python vs. nodejs ---
+  dynamodb-read  : 23.60% vs 66.02% (p=0.00000) -> SIGNIFIKANT
+  dynamodb-write : 23.60% vs 66.99% (p=0.00000) -> SIGNIFIKANT
+  get-request    : 75.51% vs 89.16% (p=0.00000) -> SIGNIFIKANT
+  invoke         : 24.14% vs 64.42% (p=0.00000) -> SIGNIFIKANT
+  post-request   : 75.51% vs 88.10% (p=0.00000) -> SIGNIFIKANT
