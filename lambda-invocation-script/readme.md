@@ -24,18 +24,4 @@ Das Skript:
 - `TOTAL_INVOCATIONS`: Anzahl geplanter Aufrufe
 - `MAX_CONCURRENCY`: Maximale gleichzeitige Aufrufe
 
-## Voraussetzungen
-
-- Python 3.10+ (empfohlen)
-- Installierte Abhaengigkeit `aioboto3`
-- Gueltige AWS-Credentials mit Berechtigung fuer `lambda:InvokeFunction`
-
-## Ausfuehrung
-
-Beispiel aus dem Projekt-Root:
-
-```bash
-python lambda-invocation-script/Lambda_Invocation_Script.py
-```
-
 Hinweis: Vor der Ausfuehrung muss `LAMBDA_NAME` im Skript auf eine gueltige Ziel-Funktion gesetzt werden.
