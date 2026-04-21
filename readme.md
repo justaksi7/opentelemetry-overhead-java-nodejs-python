@@ -146,6 +146,19 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 - [results/readme.md](results/readme.md)
 
 ## Ergebnisse
+### Ranking der Overheads.
+#### Rangliste prozentualer Overhead
+
+| Kategorie        | Metrik           | Java (1./2./3.) | Node.js (1./2./3.) | Python (1./2./3.) |
+|------------------|------------------|-----------------|--------------------|-------------------|
+| **Kaltstarts**   | Init Duration    | 2 / 3 / 0       | 0 / 0 / 5          | 3 / 2 / 0         |
+|                  | Duration         | 0 / 3 / 2       | 2 / 0 / 3          | 3 / 2 / 0         |
+|                  | Max Memory       | 2 / 3 / 0       | 0 / 0 / 5          | 3 / 2 / 0         |
+|                  | **Kombiniert (15)** | 4 / 9 / 2    | 2 / 0 / 13         | 9 / 6 / 0         |
+| **Warmstarts**   | Duration         | 3 / 2 / 0       | 2 / 0 / 3          | 0 / 3 / 2         |
+|                  | Max Memory       | 1 / 4 / 0       | 1 / 1 / 3          | 3 / 0 / 2         |
+|                  | **Kombiniert(10)**                | 4 / 6 / 0       | 3 / 1 / 6          | 3 / 3 / 4         |
+| **Kalt & Warm**  | –                | 8 / 15 / 2      | 5 / 1 / 19         | 12 / 9 / 4        |
 ### Graphische Darstellung der Messergebnisse
 #### Lambda-Funktionsaufruf
 ##### Kaltstarts
