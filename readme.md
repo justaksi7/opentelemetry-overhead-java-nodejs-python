@@ -151,3 +151,6 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 #### Lambda-Funktionsaufruf
 ##### Kaltstarts
 <img src="results/invoke-cold-otel-comparison.png" width=600>
+
+##### Warmstarts
+<img src="results/invoke-hot-otel-comparison.png" width=600>
