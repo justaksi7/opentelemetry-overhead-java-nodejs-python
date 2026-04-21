@@ -9,8 +9,6 @@ Dieses Repository begleitet eine Bachelorarbeit zur Bewertung des Overheads durc
 - [Repository-Struktur](#repository-struktur)
 - [Ordnerdokumentation](#ordnerdokumentation)
 - [Ergebnisse](#ergebnisse)
--- [Overhead Rankings](#rankingderoverheads)
-
 ## Projektueberblick
 
 Untersucht werden Unterschiede zwischen nicht instrumentierten und instrumentierten Lambda-Funktionen in drei Sprachen und fünf Benchmark-Szenarien.
