@@ -30,7 +30,99 @@ Die Benchmarks decken folgende Zugriffsmuster ab:
 3. HTTP POST Request
 4. AWS DynamoDB Read Operation
 5. AWS DynamoDB Write Operation
+6. 
+<details><summary><b>Funktionsaufruf</b></summary>
 
+Dieser Microbenchmark misst den Overhead, der entsteht, wenn eine AWS-Lambda-Funktion eine andere Lambda-Funktion asynchron aufruft (Fire-and-Forget).
+
+Typischer Ablauf:
+
+1. Funktion A erhält ein leichtgewichtiges Eingabe-Payload.
+2. Funktion A ruft Funktion B asynchron auf.
+3. Funktion A wartet nicht darauf, dass Funktion B abgeschlossen wird.
+4. Funktion A kehrt unmittelbar zurück, nachdem der Aufruf gesendet wurde.
+
+Was dadurch erfasst wird:
+
+- Tracing-Overhead bei der Kommunikation zwischen Funktionen
+- Overhead der Kontextweitergabe über Funktionsgrenzen hinweg
+- Zusätzliche Latenz in kurzen Aufrufketten
+
+</details>
+
+<details><summary><b>HTTP-GET-Anfrage</b></summary>
+
+Dieser Microbenchmark bewertet ausgehende, rein lesende HTTP-Kommunikation von einer Lambda-Funktion zu einem Endpunkt im AWS-basierten Testaufbau.
+
+Typischer Ablauf:
+
+1. Die Funktion sendet eine GET-Anfrage an einen festen Endpunkt.
+2. Ein kleines Antwort-Payload wird zurückgegeben.
+3. Die Funktion gibt die Antwort zurück oder verarbeitet sie.
+
+Was dadurch erfasst wird:
+
+- Tracing-Overhead für ausgehende Client-Spans
+- Overhead durch Header-/Kontext-Injektion in Netzwerkanfragen
+- Relativer Overhead bei einfacher, I/O-lastiger Logik
+
+</details>
+
+<details><summary><b>HTTP-POST-Anfrage</b></summary>
+
+Dieser Microbenchmark bewertet ausgehende HTTP-Kommunikation mit Request-Body von einer Lambda-Funktion zu einem Endpunkt im AWS-basierten Testaufbau.
+
+Typischer Ablauf:
+
+1. Die Funktion erstellt ein kleines strukturiertes Payload.
+2. Die Funktion sendet eine POST-Anfrage an einen festen Endpunkt.
+3. Der Endpunkt gibt eine Antwort zurück, die weitergeleitet oder minimal verarbeitet wird.
+
+Was dadurch erfasst wird:
+
+- Tracing-Overhead für Request- und Response-Verarbeitung
+- Serialisierungs- und Propagations-Overhead bei schreibenden API-Aufrufen
+- Zusätzliche Instrumentierungskosten im Vergleich zu rein lesenden HTTP-Anfragen
+
+</details>
+
+<details><summary><b>AWS-DynamoDB-Leseoperation</b></summary>
+
+Dieser Microbenchmark misst den Overhead beim Lesen eines einzelnen Datensatzes aus AWS DynamoDB.
+
+Typischer Ablauf:
+
+1. Die Funktion erstellt einen Suchschlüssel.
+2. Die Funktion führt einen Einzel-Lesezugriff durch.
+3. Das gelesene Element wird zurückgegeben.
+
+Was dadurch erfasst wird:
+
+- Tracing-Overhead bei Datastore-Client-Operationen
+- Kontextweitergabe in Aufrufe der Speicherschicht
+- Overhead-Charakteristik bei kurzen, lese-dominierten Datenzugriffen
+
+</details>
+
+<details><summary><b>AWS-DynamoDB-Schreiboperation</b></summary>
+
+Dieser Microbenchmark misst den Overhead beim Schreiben eines einzelnen Datensatzes in AWS DynamoDB.
+
+Typischer Ablauf:
+
+1. Die Funktion erstellt einen kleinen Datensatz.
+2. Die Funktion führt einen Einzel-Schreibzugriff durch.
+3. Die Funktion gibt Operationsmetadaten oder einen Erfolgsindikator zurück.
+
+Was dadurch erfasst wird:
+
+- Tracing-Overhead bei schreiborientierten Datastore-Aufrufen
+- Instrumentierungskosten bei mutierenden Operationen
+- Relative Overhead-Unterschiede zwischen Lese- und Schreibpfaden
+
+</details>
+
+Zusammen decken diese fünf Microbenchmarks Lambda-zu-Lambda-Aufrufe, ausgehenden HTTP-Verkehr und DynamoDB-Zugriffsmuster innerhalb von AWS ab. Dadurch entsteht eine kompakte, aber repräsentative Grundlage für den Vergleich von Tracing-Overhead über verschiedene Laufzeitumgebungen und Startmodi hinweg.
 Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variante (mit Tracing) ausgefuehrt.
 
 ## Repository-Struktur
