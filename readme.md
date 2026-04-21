@@ -11,7 +11,7 @@ Dieses Repository begleitet eine Bachelorarbeit zur Bewertung des Overheads durc
 - [Ergebnisse](#ergebnisse)
 ```
 .
-├── _config.yml
+├── [Ergebnisse](#ergebnisse)
 ├── _drafts
 │   ├── begin-with-the-crazy-ideas. Textile
 │   └── on-simplicity-in-technology. Markdown
