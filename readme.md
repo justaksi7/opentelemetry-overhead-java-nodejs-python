@@ -36,7 +36,7 @@ Dieser Microbenchmark misst den Overhead, der entsteht, wenn eine AWS-Lambda-Fun
 
 Typischer Ablauf:
 
-1. Funktion A erhält ein leichtgewichtiges Eingabe-Payload.
+1. Funktion A sendet ein leichtgewichtiges Eingabe-Payload.
 2. Funktion A ruft Funktion B asynchron auf.
 3. Funktion A wartet nicht darauf, dass Funktion B abgeschlossen wird.
 4. Funktion A kehrt unmittelbar zurück, nachdem der Aufruf gesendet wurde.
@@ -57,7 +57,7 @@ Typischer Ablauf:
 
 1. Die Funktion sendet eine GET-Anfrage an einen festen Endpunkt.
 2. Ein kleines Antwort-Payload wird zurückgegeben.
-3. Die Funktion gibt die Antwort zurück oder verarbeitet sie.
+3. Die Funktion gibt die Antwort zurück.
 
 Was dadurch erfasst wird:
 
@@ -75,7 +75,7 @@ Typischer Ablauf:
 
 1. Die Funktion erstellt ein kleines strukturiertes Payload.
 2. Die Funktion sendet eine POST-Anfrage an einen festen Endpunkt.
-3. Der Endpunkt gibt eine Antwort zurück, die weitergeleitet oder minimal verarbeitet wird.
+3. Der Endpunkt gibt eine Antwort zurück, die von der Funktion ausgegeben wird.
 
 Was dadurch erfasst wird:
 
@@ -97,7 +97,7 @@ Typischer Ablauf:
 
 Was dadurch erfasst wird:
 
-- Tracing-Overhead bei Datastore-Client-Operationen
+- Tracing-Overhead bei Datastore-Client-Operationen (DynamoDB)
 - Kontextweitergabe in Aufrufe der Speicherschicht
 - Overhead-Charakteristik bei kurzen, lese-dominierten Datenzugriffen
 
@@ -111,11 +111,11 @@ Typischer Ablauf:
 
 1. Die Funktion erstellt einen kleinen Datensatz.
 2. Die Funktion führt einen Einzel-Schreibzugriff durch.
-3. Die Funktion gibt Operationsmetadaten oder einen Erfolgsindikator zurück.
+3. Die Funktion gibt Erfolgsindikator zurück.
 
 Was dadurch erfasst wird:
 
-- Tracing-Overhead bei schreiborientierten Datastore-Aufrufen
+- Tracing-Overhead bei schreiborientierten Datastore-Aufrufen (DynamoDB)
 - Instrumentierungskosten bei mutierenden Operationen
 - Relative Overhead-Unterschiede zwischen Lese- und Schreibpfaden
 
