@@ -37,4 +37,4 @@ Für jeden Benchmark und jede Temperatur sind Plot-Dateien für OTel-vs.-Nicht-O
 
 ## Rolle im Workflow
 
-`cloudwatch-logs` stellt Rohdaten bereit, während `results` die daraus abgeleiteten, publikationsreifen Ausgaben enthält.
+`cloudwatch-logs` stellt Rohdaten bereit, während `results` die daraus abgeleiteten Ausgaben enthält.
