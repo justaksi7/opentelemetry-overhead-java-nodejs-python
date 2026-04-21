@@ -12,6 +12,7 @@ Dieses Repository begleitet eine Bachelorarbeit zur Bewertung des Overheads durc
 ## Projektueberblick
 
 Untersucht werden Unterschiede zwischen nicht instrumentierten und instrumentierten Lambda-Funktionen in drei Sprachen und fünf Benchmark-Szenarien.
+Alle Messungen wurden zwischen 02. März 2026 und 07. März 2026 durchgefürt.
 
 Verglichene Metriken:
 
