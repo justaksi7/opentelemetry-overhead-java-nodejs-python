@@ -147,6 +147,9 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 
 ## Ergebnisse
 ### Ranking der Overheads.
+Es wurden Ranglisten basierend auf den relativen prozentualen Performanceveränderungen (Overheads) und den absoluten Messwerten erstellt. 
+Dabei wurde verglichen wie oft jede Sprache den 1, 2. und 3. Platz belegt hat. Der kleinste Overhead in **%** oder der kleinste absolute Messwert - 
+in **ms** bei **Duration** und **Init Duration** und in **MB** bei **Max Memory Used** bekommt den 1. Platz.
 #### Rangliste prozentualer Overhead
 
 | Kategorie        | Metrik           | Java (1./2./3.) | Node.js (1./2./3.) | Python (1./2./3.) |
@@ -159,6 +162,19 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 |                  | Max Memory       | 1 / 4 / 0       | 1 / 1 / 3          | 3 / 0 / 2         |
 |                  | **Kombiniert(10)**                | 4 / 6 / 0       | 3 / 1 / 6          | 3 / 3 / 4         |
 | **Kalt & Warm**  | –                | 8 / 15 / 2      | 5 / 1 / 19         | 12 / 9 / 4        |
+
+#### Rangliste absolute Messwerte
+
+| Kategorie        | Metrik             | Java (1./2./3.) | Node.js (1./2./3.) | Python (1./2./3.) |
+|------------------|--------------------|-----------------|--------------------|-------------------|
+| **Kaltstarts**   | Init Duration      | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
+|                  | Duration           | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
+|                  | Max Memory         | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
+|                  | **Kombiniert (15)** | 0 / 0 / 15     | 0 / 15 / 0         | 15 / 0 / 0        |
+| **Warmstarts**   | Duration           | 1 / 1 / 3       | 0 / 4 / 1          | 4 / 0 / 1         |
+|                  | Max Memory         | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
+|                  | **Kombiniert (10)**                  | 1 / 1 / 8       | 0 / 9 / 1          | 9 / 0 / 1         |
+| **Kalt & Warm**  | –                  | 1 / 1 / 23      | 0 / 24 / 1         | 24 / 0 / 1        |
 ### Graphische Darstellung der Messergebnisse
 #### Lambda-Funktionsaufruf
 ##### Kaltstarts
