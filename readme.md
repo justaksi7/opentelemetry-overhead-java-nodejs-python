@@ -144,3 +144,9 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 - [gfx/readme.md](gfx/readme.md)
 - [lambda-invocation-script/readme.md](lambda-invocation-script/readme.md)
 - [results/readme.md](results/readme.md)
+
+## Ergebnisse
+
+### Graphische Darstellung der Messergebnisse
+#### Lambda-Funktionsaufruf
+<img src="results/invoke-cold-otel-comparison-png" width=800>
