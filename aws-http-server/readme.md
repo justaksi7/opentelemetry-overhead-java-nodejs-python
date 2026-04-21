@@ -49,11 +49,3 @@ Der HTTP-Testserver wurde mit folgender AWS-EC2-Instanzkonfiguration betrieben:
 | Netzwerkleistung | Bis zu 12.5 Gigabit |
 | EBS-Bandbreite (Baseline) | 312 Mbps |
 
-## Lokaler Start
-
-Beispiel aus dem Ordner `aws-http-server`:
-
-```bash
-npm install
-npm run dev
-```
