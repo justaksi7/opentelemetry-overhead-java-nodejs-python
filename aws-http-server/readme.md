@@ -1,44 +1,59 @@
 # aws-http-server
 
-## Purpose
+## Zweck
 
-This folder contains a simple HTTP test server for the microbenchmarks:
+Dieser Ordner enthält einen einfachen HTTP-Testserver für die Microbenchmarks:
 
 - Benchmark 2: HTTP GET Request
 - Benchmark 3: HTTP POST Request
 
-The implementation is intentionally minimal and only uses the file `index.js`.
+Die Implementierung ist bewusst minimal gehalten.
 
-## Implementation (`index.js`)
+Aktuelle Dateien in diesem Ordner:
 
-The server is based on Express and exposes three endpoints:
+- `index.js`
+- `package.json`
+- `package-lock.json`
+
+## Implementierung (`index.js`)
+
+Der Server basiert auf Express und stellt drei Endpunkte bereit:
 
 1. `GET /get-request`
-Returns a predefined JSON object and increments the internal `requestCount` counter.
+Gibt ein vordefiniertes JSON-Objekt zurück und erhöht den internen Zähler `requestCount`.
 
 2. `POST /post-request`
-Accepts a JSON payload, replaces the currently stored record, and increments `requestCount`.
+Akzeptiert ein JSON-Payload, ersetzt den aktuell gespeicherten Datensatz und erhöht `requestCount`.
 
 3. `GET /request-count`
-Returns the number of processed GET/POST requests.
+Gibt die Anzahl der verarbeiteten GET-/POST-Anfragen zurück.
 
-## Why This Simplicity Matters
+## Warum diese Einfachheit wichtig ist
 
-The file is intentionally small so that as little additional server logic as possible affects the HTTP benchmark measurements.
+Die Datei ist absichtlich klein, damit möglichst wenig zusätzliche Serverlogik die HTTP-Benchmark-Messungen beeinflusst.
 
-## Runtime Environment
+## Laufzeitumgebung
 
-The HTTP test server was run on the following AWS EC2 instance configuration:
+Der HTTP-Testserver wurde mit folgender AWS-EC2-Instanzkonfiguration betrieben:
 
-| Parameter | Value |
+| Parameter | Wert |
 |---|---|
-| Instance type | m7i-flex.large |
-| Architecture | x86_64 |
+| Instanztyp | m7i-flex.large |
+| Architektur | x86_64 |
 | vCPUs | 2 |
-| Memory (RAM) | 8 GiB |
-| Clock speed | 3.2 GHz (sustained) |
-| Operating system | Amazon Linux 2 |
+| Arbeitsspeicher (RAM) | 8 GiB |
+| Taktfrequenz | 3.2 GHz (sustained) |
+| Betriebssystem | Amazon Linux 2 |
 | Region | eu-central-1 (Frankfurt) |
-| Availability zones | eu-central-1a, eu-central-1b, eu-central-1c |
-| Network performance | Up to 12.5 Gigabit |
-| EBS bandwidth (baseline) | 312 Mbps |
+| Availability Zones | eu-central-1a, eu-central-1b, eu-central-1c |
+| Netzwerkleistung | Bis zu 12.5 Gigabit |
+| EBS-Bandbreite (Baseline) | 312 Mbps |
+
+## Lokaler Start
+
+Beispiel aus dem Ordner `aws-http-server`:
+
+```bash
+npm install
+npm run dev
+```

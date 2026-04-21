@@ -1,51 +1,47 @@
 # cloudwatch-logs
 
-## Purpose
+## Zweck
 
-This folder contains raw data exported from AWS CloudWatch and the analysis scripts used for evaluation.
+Dieser Ordner enthält aus AWS CloudWatch exportierte Rohdaten sowie die zur Auswertung verwendeten Analyse-Skripte.
 
-## Raw Data (CSV)
+## Rohdaten (CSV)
 
-The CSV files contain CloudWatch log lines in the form:
+Die CSV-Dateien enthalten CloudWatch-Logzeilen in folgender Form:
 
 - `@timestamp`
 - `@message` (mit `Duration`, `Max Memory Used`, `Init Duration`)
 
-Example fields inside a REPORT line in `@message`:
+Beispielhafte Felder innerhalb einer REPORT-Zeile in `@message`:
 
 - `Duration: ... ms`
 - `Max Memory Used: ... MB`
 - `Init Duration: ... ms`
 
-## File Naming Scheme
+## Dateinamensschema
 
-Measurement files follow this pattern:
+Messdateien folgen diesem Muster:
 
-`<language>-<benchmark>-<otel?>-<temperature>.csv`
+`<sprache>-<benchmark>-<otel?>-<temperatur>.csv`
 
-Examples:
+Beispiele:
 
-- `java-invoke-cold.csv` (without OTel, cold)
-- `java-invoke-otel-cold.csv` (with OTel, cold)
+- `java-invoke-cold.csv` (ohne OTel, cold)
+- `java-invoke-otel-cold.csv` (mit OTel, cold)
 - `python-post-request-hot.csv`
 
-Dimensions:
+Dimensionen:
 
-- Languages: `java`, `nodejs`, `python`
+- Sprachen: `java`, `nodejs`, `python`
 - Benchmarks: `invoke`, `get-request`, `post-request`, `dynamodb-read`, `dynamodb-write`
-- Variants: with OTel (`-otel-`) and without OTel
-- Temperatures: `cold`, `hot`
+- Varianten: mit OTel (`-otel-`) und ohne OTel
+- Temperaturen: `cold`, `hot`
 
-## Analysis Scripts
+## Analyse-Skripte
 
-The folder includes Python scripts for significance tests and bootstrap analyses:
+Der Ordner enthält Python-Skripte für Bootstrap-Analysen:
 
-- `t_tests_otel_cold.py`
-- `t_tests_otel_hot.py`
-- `bootstrap_tests_cold_with_means.py`
-- `bootstrap_tests_cold_with_medians.py`
-- `bootstrap_tests_hot_with_means.py`
-- `bootstrap_tests_hot_with_medians.py`
+- `bootstrap_tests_cold.py`
+- `bootstrap_tests_hot.py`
 
-These scripts extract metrics from `@message` and compare OTel vs. non-OTel results per language and benchmark.
+Diese Skripte extrahieren Metriken aus `@message` und vergleichen OTel- mit Nicht-OTel-Ergebnissen pro Sprache und Benchmark.
 

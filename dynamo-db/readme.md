@@ -1,10 +1,10 @@
 # dynamo-db
 
-## AWS DynamoDB Table Structure
+## AWS-DynamoDB-Tabellenstruktur
 
-This project uses the `EvaluationTable` table.
+Dieses Projekt verwendet die Tabelle `EvaluationTable`.
 
-Documented structure (as used by the benchmark functions):
+Dokumentierte Struktur (wie von den Benchmark-Funktionen genutzt):
 
 ```javascript
 TableName: 'EvaluationTable',
@@ -13,23 +13,23 @@ Key: {
 }
 ```
 
-## Table Configuration
+## Tabellenkonfiguration
 
-The DynamoDB table was configured with the following parameters:
+Die DynamoDB-Tabelle wurde mit folgenden Parametern konfiguriert:
 
-| Parameter | Value |
+| Parameter | Wert |
 |---|---|
-| Table name | `EvaluationTable` |
-| Primary key | `Id` (String-UUID) |
-| Read capacity mode | On-demand (standard) |
-| Write capacity mode | On-demand (standard) |
-| Encryption | AWS Owned Key (standard) |
-| Point-in-time recovery | Disabled (standard) |
+| Tabellenname | `EvaluationTable` |
+| Primärschlüssel | `Id` (String-UUID) |
+| Lesekapazitätsmodus | On-demand (Standard) |
+| Schreibkapazitätsmodus | On-demand (Standard) |
+| Verschlüsselung | AWS Owned Key (Standard) |
+| Point-in-time Recovery | Deaktiviert (Standard) |
 | Region | eu-central-1 (Frankfurt) |
 
-## Key Schema
+## Key-Schema
 
-- Table: `EvaluationTable`
-- Primary key: `Id` (String-UUID)
-- Example key lookup: `Id = <uuid>`
+- Tabelle: `EvaluationTable`
+- Primärschlüssel: `Id` (String-UUID)
+- Beispiel-Schlüsselabfrage: `Id = <uuid>`
 

@@ -1,26 +1,26 @@
 # aws-lambda-functions
 
-## Purpose
+## Zweck
 
-This folder contains the AWS Lambda implementations for all microbenchmarks.
+Dieser Ordner enthält die AWS-Lambda-Implementierungen für alle Microbenchmarks.
 
-It includes:
+Enthalten sind:
 
 - 5 Benchmarks
-- 3 languages (Java, Node.js, Python)
-- 15 implementations in total
+- 3 Sprachen (Java, Node.js, Python)
+- Insgesamt 15 Implementierungen
 
-Important: In the Function Invocation benchmark, the invocation is asynchronous (fire-and-forget), so the caller does not wait for the result of the second Lambda function.
+Wichtig: Im Benchmark Function Invocation ist der Aufruf asynchron (Fire-and-Forget), daher wartet der Aufrufer nicht auf das Ergebnis der zweiten Lambda-Funktion.
 
-## Folder Structure
+## Ordnerstruktur
 
-- `java/`: Java implementations of all 5 benchmarks
-- `nodejs/`: Node.js implementations of all 5 benchmarks
-- `python/`: Python implementations of all 5 benchmarks
+- `java/`: Java-Implementierungen aller 5 Benchmarks
+- `nodejs/`: Node.js-Implementierungen aller 5 Benchmarks
+- `python/`: Python-Implementierungen aller 5 Benchmarks
 
-## Benchmark Coverage per Language
+## Benchmark-Abdeckung pro Sprache
 
-For each language, the following functions are available:
+Für jede Sprache sind die folgenden Funktionen verfügbar:
 
 1. `Invoke_Lambda` (asynchron)
 2. `GET_Request`
@@ -28,48 +28,48 @@ For each language, the following functions are available:
 4. `DynamoDB_Read`
 5. `DynamoDB_Write`
 
-## Konfiguration der AWS Lambda-Umgebung
+## Konfiguration der AWS-Lambda-Umgebung
 
-To ensure comparability, all functions were executed with fixed configuration parameters.
+Um Vergleichbarkeit sicherzustellen, wurden alle Funktionen mit festen Konfigurationsparametern ausgeführt.
 
 | Parameter | Wert |
 |---|---|
 | Region | `eu-central-1` (Frankfurt) |
-| Memory | `1024 MB` |
+| Speicher | `1024 MB` |
 | Ephemeral Storage | `512 MB` |
-| Timeout | `15 seconds` |
-| Reserved concurrency | `200` |
+| Timeout | `15 Sekunden` |
+| Reserved Concurrency | `200` |
 | Runtime | `Java 21`, `Python 3.13`, `Node.js 22.x` |
-| IAM role | Minimal required permissions |
+| IAM-Rolle | Minimal erforderliche Berechtigungen |
 
-### IAM Permissions (Minimal)
+### IAM-Berechtigungen (minimal)
 
 - `lambda:InvokeFunction` (Benchmark 1)
 - `dynamodb:GetItem` (Benchmark 4)
 - `dynamodb:PutItem` (Benchmark 5)
-- Write logs to CloudWatch
+- Logs in CloudWatch schreiben
 
-### Instrumentation
+### Instrumentierung
 
-Instrumentation is applied via ADOT Lambda Layers (language- and region-specific), referenced by ARN.
+Die Instrumentierung erfolgt über ADOT-Lambda-Layer (sprach- und regionsspezifisch), referenziert per ARN.
 
-## Libraries and SDKs Used
+## Verwendete Bibliotheken und SDKs
 
-The implementations use official AWS SDKs and standard HTTP libraries.
+Die Implementierungen nutzen offizielle AWS-SDKs sowie Standard-HTTP-Bibliotheken.
 
 ### Java
 
-| Benchmark | Libraries / SDKs Used |
+| Benchmark | Verwendete Bibliotheken / SDKs |
 |---|---|
-| 1. Lambda Invocation | AWS Lambda Runtime, AWS SDK v2 for Lambda (`LambdaClient`, `InvokeRequest`, `InvocationType`, `SdkBytes`) |
+| 1. Lambda Invocation | AWS Lambda Runtime, AWS SDK v2 für Lambda (`LambdaClient`, `InvokeRequest`, `InvocationType`, `SdkBytes`) |
 | 2. HTTP GET | AWS Lambda Runtime, Java HTTP Client (`java.net.http.HttpClient`, `HttpRequest`, `HttpResponse`) |
 | 3. HTTP POST | AWS Lambda Runtime, Java HTTP Client, Gson |
-| 4. DynamoDB Read | AWS Lambda Runtime, AWS SDK v2 for DynamoDB (`DynamoDbClient`, `AttributeValue`, `GetItemRequest`, `GetItemResponse`) |
-| 5. DynamoDB Write | AWS Lambda Runtime, AWS SDK v2 for DynamoDB (`DynamoDbClient`, `PutItemRequest`, `DynamoDbException`), `java.util.UUID` |
+| 4. DynamoDB Read | AWS Lambda Runtime, AWS SDK v2 für DynamoDB (`DynamoDbClient`, `AttributeValue`, `GetItemRequest`, `GetItemResponse`) |
+| 5. DynamoDB Write | AWS Lambda Runtime, AWS SDK v2 für DynamoDB (`DynamoDbClient`, `PutItemRequest`, `DynamoDbException`), `java.util.UUID` |
 
 ### Python
 
-| Benchmark | Libraries / Modules Used |
+| Benchmark | Verwendete Bibliotheken / Module |
 |---|---|
 | 1. Lambda Invocation | `boto3`, `json` |
 | 2. HTTP GET | `urllib3` |
@@ -79,11 +79,11 @@ The implementations use official AWS SDKs and standard HTTP libraries.
 
 ### Node.js
 
-| Benchmark | Libraries / Modules Used |
+| Benchmark | Verwendete Bibliotheken / Module |
 |---|---|
 | 1. Lambda Invocation | `@aws-sdk/client-lambda` (`LambdaClient`, `InvokeCommand`) |
-| 2. HTTP GET | No additional library (runtime `fetch`) |
-| 3. HTTP POST | No additional library (runtime `fetch`) |
+| 2. HTTP GET | Keine zusätzliche Bibliothek (Runtime-`fetch`) |
+| 3. HTTP POST | Keine zusätzliche Bibliothek (Runtime-`fetch`) |
 | 4. DynamoDB Read | `@aws-sdk/client-dynamodb` (`DynamoDBClient`, `GetItemCommand`) |
 | 5. DynamoDB Write | `@aws-sdk/client-dynamodb` (`DynamoDBClient`, `PutItemCommand`), `crypto.randomUUID` |
 

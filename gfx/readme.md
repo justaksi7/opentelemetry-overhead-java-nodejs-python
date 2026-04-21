@@ -1,5 +1,5 @@
 # gfx
 
-## Purpose
+## Zweck
 
-This folder contains static graphics used by the main documentation.
+Dieser Ordner enthält statische Grafiken, die in der Hauptdokumentation verwendet werden.
