@@ -35,12 +35,12 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 
 ## Repository-Struktur
 
-- `aws-http-server/`: Minimaler HTTP-Testserver fuer GET/POST-Benchmarks
+- `aws-http-server/`: Minimaler HTTP-Testserver für GET/POST-Benchmarks
 - `aws-lambda-functions/`: Lambda-Implementierungen in Java, Node.js und Python
 - `cloudwatch-logs/`: Exportierte Rohdaten (CSV) und Auswerte-Skripte
 - `dynamo-db/`: Dokumentation der verwendeten DynamoDB-Tabellenstruktur
-- `gfx/`: Grafiken fuer die Dokumentation
-- `lambda-invocation-script/`: Last-/Invocation-Skript fuer den Lambda-Aufruf-Benchmark
+- `gfx/`: Grafiken für die Dokumentation
+- `lambda-invocation-script/`: Last-/Invocation-Skript für den Lambda-Aufruf-Benchmark
 - `results/`: Aufbereitete Ergebnisdateien und Visualisierungen
 
 ## Ordnerdokumentation
