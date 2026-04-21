@@ -151,7 +151,6 @@ Es wurden Ranglisten basierend auf den relativen prozentualen Performanceveränd
 Dabei wurde verglichen wie oft jede Sprache den 1, 2. und 3. Platz belegt hat. Der kleinste Overhead in **%** oder der kleinste absolute Messwert - 
 in **ms** bei **Duration** und **Init Duration** und in **MB** bei **Max Memory Used** bekommt den 1. Platz.
 #### Rangliste prozentualer Overhead
-
 | Kategorie        | Metrik           | Java (1./2./3.) | Node.js (1./2./3.) | Python (1./2./3.) |
 |------------------|------------------|-----------------|--------------------|-------------------|
 | **Kaltstarts**   | Init Duration    | 2 / 3 / 0       | 0 / 0 / 5          | 3 / 2 / 0         |
@@ -164,7 +163,6 @@ in **ms** bei **Duration** und **Init Duration** und in **MB** bei **Max Memory 
 | **Kalt & Warm**  | –                | 8 / 15 / 2      | 5 / 1 / 19         | 12 / 9 / 4        |
 
 #### Rangliste absolute Messwerte
-
 | Kategorie        | Metrik             | Java (1./2./3.) | Node.js (1./2./3.) | Python (1./2./3.) |
 |------------------|--------------------|-----------------|--------------------|-------------------|
 | **Kaltstarts**   | Init Duration      | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
@@ -175,6 +173,62 @@ in **ms** bei **Duration** und **Init Duration** und in **MB** bei **Max Memory 
 |                  | Max Memory         | 0 / 0 / 5       | 0 / 5 / 0          | 5 / 0 / 0         |
 |                  | **Kombiniert (10)**                  | 1 / 1 / 8       | 0 / 9 / 1          | 9 / 0 / 1         |
 | **Kalt & Warm**  | –                  | 1 / 1 / 23      | 0 / 24 / 1         | 24 / 0 / 1        |
+### Tabellarische Darstellung der absoluten Messwete und relativen Overheads in %
+#### Kaltstarts
+##### Duration
+| Benchmark        | Sprache | Ohne OTel | Mit OTel | Overhead [KI] |
+|------------------|---------|-----------|----------|---------------|
+| dynamodb-read    | Java    | 1296,15   | 1840,74  | 41,99% [41,34;42,61] |
+|                  | Node.js | 104,98    | 206,35   | 96,56% [94,61;98,23] |
+|                  | Python  | 37,80     | 45,51    | 20,42% [18,07;22,64] |
+| dynamodb-write   | Java    | 1302,57   | 1849,57  | 42,01% [41,38;42,62] |
+|                  | Node.js | 108,74    | 208,50   | 91,67% [90,08;93,20] |
+|                  | Python  | 41,65     | 48,78    | 17,06% [14,83;19,00] |
+| get-request      | Java    | 227,12    | 728,44   | 220,70% [219,10;222,35] |
+|                  | Node.js | 173,59    | 130,50   | -24,84% [-25,29;-24,35] |
+|                  | Python  | 8,41      | 7,49     | -10,96% [-12,15;-9,78] |
+| invoke           | Java    | 1177,85   | 1728,22  | 46,73% [46,18;47,33] |
+|                  | Node.js | 104,20    | 206,22   | 97,98% [96,82;99,27] |
+|                  | Python  | 36,67     | 43,59    | 18,88% [16,97;20,90] |
+| post-request     | Java    | 267,25    | 751,27   | 181,18% [179,62;183,02] |
+|                  | Node.js | 179,65    | 139,31   | -22,48% [-22,96;-21,99] |
+|                  | Python  | 8,44      | 7,49     | -11,23% [-12,50;-10,07] |
+##### Init Duration
+| Benchmark        | Sprache | Ohne OTel | Mit OTel | Overhead [KI] |
+|------------------|---------|-----------|----------|---------------|
+| dynamodb-read    | Java    | 1644,62   | 4331,64  | 163,38% [162,12;164,64] |
+|                  | Node.js | 419,62    | 1722,46  | 310,46% [308,03;312,78] |
+|                  | Python  | 499,42    | 1221,04  | 144,54% [142,63;146,63] |
+| dynamodb-write   | Java    | 1654,55   | 4350,58  | 162,90% [161,68;164,14] |
+|                  | Node.js | 423,20    | 1722,29  | 306,86% [304,38;309,18] |
+|                  | Python  | 499,06    | 1221,20  | 144,73% [142,85;146,93] |
+| get-request      | Java    | 838,33    | 3334,48  | 297,77% [295,73;299,97] |
+|                  | Node.js | 148,45    | 1268,26  | 754,13% [744,20;765,46] |
+|                  | Python  | 169,76    | 1022,64  | 502,34% [497,71;507,06] |
+| invoke           | Java    | 1623,17   | 4281,86  | 163,82% [162,67;164,92] |
+|                  | Node.js | 436,50    | 1739,77  | 298,48% [295,18;301,23] |
+|                  | Python  | 469,01    | 1189,14  | 153,56% [151,95;155,55] |
+| post-request     | Java    | 877,13    | 3372,64  | 284,51% [282,69;286,05] |
+|                  | Node.js | 139,51    | 1262,88  | 805,21% [798,92;812,44] |
+|                  | Python  | 169,06    | 1007,19  | 495,87% [490,38;501,25] |
+##### Max Memory Used
+| Benchmark        | Sprache | Ohne OTel | Mit OTel | Overhead [KI] |
+|------------------|---------|-----------|----------|---------------|
+| dynamodb-read    | Java    | 162       | 249      | 53,70% [53,70;53,70] |
+|                  | Node.js | 103       | 171      | 66,02% [66,02;66,02] |
+|                  | Python  | 89        | 110      | 23,60% [23,60;23,60] |
+| dynamodb-write   | Java    | 162       | 249      | 53,70% [53,70;53,70] |
+|                  | Node.js | 103       | 172      | 66,99% [66,99;66,99] |
+|                  | Python  | 89        | 110      | 23,60% [23,60;23,60] |
+| get-request      | Java    | 129       | 218      | 68,99% [68,99;68,99] |
+|                  | Node.js | 83        | 157      | 89,16% [89,16;90,36] |
+|                  | Python  | 49        | 86       | 75,51% [75,51;75,51] |
+| invoke           | Java    | 162       | 250      | 54,32% [53,70;54,32] |
+|                  | Node.js | 104       | 171      | 64,42% [64,42;64,42] |
+|                  | Python  | 87        | 108      | 24,14% [24,14;24,14] |
+| post-request     | Java    | 131       | 220      | 67,94% [67,94;67,94] |
+|                  | Node.js | 84        | 158      | 88,10% [88,10;88,10] |
+|                  | Python  | 49        | 86       | 75,51% [75,51;75,51] |
 ### Graphische Darstellung der Messergebnisse
 #### Lambda-Funktionsaufruf
 ##### Kaltstarts
