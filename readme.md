@@ -146,7 +146,6 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 - [results/readme.md](results/readme.md)
 
 ## Ergebnisse
-
 ### Graphische Darstellung der Messergebnisse
 #### Lambda-Funktionsaufruf
 ##### Kaltstarts
@@ -154,3 +153,31 @@ Jeder Benchmark wird als Baseline (ohne Tracing) und als instrumentierte Variant
 
 ##### Warmstarts
 <img src="results/invoke-hot-otel-comparison.png" width=600>
+
+#### HTTP-GET-Anfrage
+##### Kaltstarts
+<img src="results/get-request-cold-otel-comparison.png" width=600>
+
+##### Warmstarts
+<img src="results/get-request-hot-otel-comparison.png" width=600>
+
+#### HTTP-POST-Anfrage
+##### Kaltstarts
+<img src="results/post-request-cold-otel-comparison.png" width=600>
+
+##### Warmstarts
+<img src="results/post-request-hot-otel-comparison.png" width=600>
+
+#### AWS-DynamoDB-Leseoperation
+##### Kaltstarts
+<img src="results/dynamodb-read-cold-otel-comparison.png" width=600>
+
+##### Warmstarts
+<img src="results/dynamodb-read-hot-otel-comparison.png" width=600>
+
+#### AWS-DynamoDB-Schreiboperation
+##### Kaltstarts
+<img src="results/dynamodb-write-cold-otel-comparison.png" width=600>
+
+##### Warmstarts
+<img src="results/dynamodb-write-hot-otel-comparison.png" width=600>
