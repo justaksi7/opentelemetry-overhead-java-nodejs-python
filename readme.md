@@ -30,7 +30,6 @@ Die Benchmarks decken folgende Zugriffsmuster ab:
 3. HTTP POST Request
 4. AWS DynamoDB Read Operation
 5. AWS DynamoDB Write Operation
-6. 
 <details><summary><b>Funktionsaufruf</b></summary>
 
 Dieser Microbenchmark misst den Overhead, der entsteht, wenn eine AWS-Lambda-Funktion eine andere Lambda-Funktion asynchron aufruft (Fire-and-Forget).
