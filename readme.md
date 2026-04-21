@@ -9,29 +9,7 @@ Dieses Repository begleitet eine Bachelorarbeit zur Bewertung des Overheads durc
 - [Repository-Struktur](#repository-struktur)
 - [Ordnerdokumentation](#ordnerdokumentation)
 - [Ergebnisse](#ergebnisse)
-```
-.
-├── [Ergebnisse](#ergebnisse)
-├── _drafts
-│   ├── begin-with-the-crazy-ideas. Textile
-│   └── on-simplicity-in-technology. Markdown
-├── _includes
-│   ├── footer.html
-│   └── header.html
-├── _layouts
-│   ├── default.html
-│   └── post.html
-├── _posts
-│   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-│   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _data
-│   └── members.yml
-├── _site
-└── index.html
-```
-
 ## Projektueberblick
-
 Untersucht werden Unterschiede zwischen nicht instrumentierten und instrumentierten Lambda-Funktionen in drei Sprachen und fünf Benchmark-Szenarien.
 Alle Messungen wurden zwischen 02. März 2026 und 07. März 2026 durchgefürt.
 
