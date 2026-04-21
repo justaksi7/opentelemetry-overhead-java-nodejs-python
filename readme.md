@@ -9,7 +9,8 @@ Dieses Repository begleitet eine Bachelorarbeit zur Bewertung des Overheads durc
 - [Repository-Struktur](#repository-struktur)
 - [Ordnerdokumentation](#ordnerdokumentation)
 - [Ergebnisse](#ergebnisse)
-- .
+
+.
 ├── _config.yml
 ├── _drafts
 │   ├── begin-with-the-crazy-ideas. Textile
